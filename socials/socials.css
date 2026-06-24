@@ -1,0 +1,137 @@
+.social-container {
+    position: fixed;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    scale: .8;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    list-style: none;
+
+    padding: 14px 10px;
+    margin: 0;
+
+    background: #000;
+    border-radius: 999px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+    transition: top .35s ease, transform .35s ease;
+}
+
+.social-container.top-mode {
+    top: 1%;
+    transform: translateY(0);
+}
+
+.social-container.center-mode {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social-container .icon-content {
+    position: relative;
+}
+
+.social-container .tooltip {
+    position: absolute;
+    left: 50%;
+    top: -35px;
+
+    transform: translateX(-50%);
+
+    background: white;
+    color: black;
+
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .6s;
+}
+
+.social-container .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -45px;
+}
+
+.social-container .link {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    color: white;
+    font-size: 24px;
+
+    transition: .3s;
+}
+
+.social-container .link:hover {
+    transform: translateY(-4px);
+}
+
+.social-container .link[data-social="instagram"]:hover {
+    color: #ff009d;
+}
+
+.social-container .link[data-social="youtube"]:hover {
+    color: #ff0000;
+}
+
+.social-container .link[data-social="whatsapp"]:hover {
+    color: #25D366;
+}
+
+@media (max-width: 768px) {
+
+    .social-container .link {
+        transform: none !important;
+    }
+
+    .social-container .link:hover {
+        transform: none;
+    }
+
+    .social-container .link[data-social="instagram"] {
+        color: #ff009d;
+    }
+
+    .social-container .link[data-social="youtube"] {
+        color: #ff0000;
+    }
+
+    .social-container .link[data-social="whatsapp"] {
+        color: #25D366;
+    }
+
+    .social-container .tooltip {
+        display: none;
+    }
+
+}
+
+.social-container.top-mode {
+    top: 60px;      /* below sticky navbar */
+    transform: translateY(0);
+
+    background:rgba(12,15,20,0.5);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
