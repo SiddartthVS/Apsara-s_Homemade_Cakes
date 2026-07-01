@@ -1,0 +1,25 @@
+TITLE: Black Forest Cake
+IMAGES: blackforest1.jpg, blackforest2.jpg
+BADGES: 1/2 Kg, 8 PCS
+INFO: Fresh Cream-₹110, Eggless Available-₹100, Delivery Charge-₹40
+---
+TITLE: Pineapple Cake
+IMAGES: pineapple1.jpg, pineapple2.jpg, pineapple3.jpg
+BADGES: 1 Kg, 16 PCS
+INFO: Fruit Topping-₹130, Delivery Charge-₹40
+---
+TITLE: Butterscotch Cake
+IMAGES: butterscotch1.jpg, butterscotch2.jpg
+BADGES: 1/2 Kg, 8 PCS
+INFO: Crunchy Caramel-₹120, Eggless Available-₹100, Delivery Charge-₹40
+---
+TITLE: Mango Delight Cake
+IMAGES: mango1.jpg, mango2.jpg
+BADGES: 1 Kg, 12 PCS
+INFO: Seasonal Special-₹140, Delivery Charge-₹40
+---
+TITLE: Vanilla Fantasy Cake
+IMAGES: vanilla1.jpg, vanilla2.jpg, vanilla3.jpg
+BADGES: 1/2 Kg, 8 PCS
+INFO: Classic Flavor-₹90, Delivery Charge-₹40
+---

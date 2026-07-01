@@ -1,0 +1,25 @@
+TITLE: Chocolate Truffle Brownie
+IMAGES: chocolate1.jpg, chocolate2.jpg, chocolate3.jpg
+BADGES: 1/2 Kg, 16 PCS
+INFO: Eggless Available-₹100, Free Birthday Tag-₹0, Delivery Charge-₹40
+---
+TITLE: Red Velvet Brownie
+IMAGES: velvet1.jpg, velvet2.jpg
+BADGES: 1 Kg, 20 PCS
+INFO: Eggless Available-₹150, Delivery Charge-₹40
+---
+TITLE: Walnut Brownie
+IMAGES: walnut1.jpg, walnut2.jpg, walnut3.jpg
+BADGES: 1/2 Kg, 12 PCS
+INFO: Premium Nuts-₹120, Delivery Charge-₹40
+---
+TITLE: Double Chocolate Brownie
+IMAGES: double1.jpg, double2.jpg
+BADGES: 1/2 Kg, 16 PCS
+INFO: Extra Chocolate-₹130, Eggless Available-₹100, Delivery Charge-₹40
+---
+TITLE: Classic Brownie
+IMAGES: classic1.jpg, classic2.jpg, classic3.jpg
+BADGES: 1 Kg, 24 PCS
+INFO: Bestseller-₹90, Delivery Charge-₹40
+---

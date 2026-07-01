@@ -3,5 +3,7 @@ function openGallery() {
 }
 
 function closeGallery() {
-    document.getElementById("gallery").classList.remove("show");
+    const modal = document.getElementById("gallery");
+    modal.querySelectorAll(".cake-card-img").forEach(e => e.remove());
+    modal.classList.remove("show");
 }

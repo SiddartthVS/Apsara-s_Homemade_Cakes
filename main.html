@@ -16,6 +16,7 @@
     <script src="socials/socials.js"></script>
     <script src="home/home.js"></script>
     <script src="menu.js"></script>
+    <script src="menu/menu-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -207,161 +208,44 @@
 
     <section id="menu" class="py-5">
         <div class="container align-items-center">
-            <h2 class="text-center mb-5">
-                Brownies
-            </h2>
+            <h2 class="text-center mb-5">Brownies</h2>
         </div>
-        <div class="cakes-grid">
-        <div class="cake-card">
+        <div class="cakes-grid" id="brownies-grid"></div>
+        <div class="show-more-wrap"><button class="show-more-btn" id="brownies-btn">Show More <span class="btn-shadow"></span></button></div>
 
-    <div class="cake-image-section">
-        <img src="https://picsum.photos/400/400" alt="Cake">
-
-        <button class="view-images-btn" onclick="openGallery()">
-            View Images
-        </button>
-    </div>
-
-    <div class="cake-details">
-
-        <div class="top-row">
-            <h2>Chocolate Truffle Cake</h2>
+        <div class="container align-items-center mt-5">
+            <h2 class="text-center mb-5">Specials</h2>
         </div>
+        <div class="cakes-grid" id="specials-grid"></div>
+        <div class="show-more-wrap"><button class="show-more-btn" id="specials-btn">Show More <span class="btn-shadow"></span></button></div>
 
-        <div class="badges">
-            <span>1/2 Kg</span>
-            <span>16 PCS</span>
+        <div class="container align-items-center mt-5">
+            <h2 class="text-center mb-5">Cakes</h2>
         </div>
+        <div class="cakes-grid" id="cakes-grid"></div>
+        <div class="show-more-wrap"><button class="show-more-btn" id="cakes-btn">Show More <span class="btn-shadow"></span></button></div>
 
-        <div class="info-table">
+        <div class="container align-items-center mt-5">
+            <h2 class="text-center mb-5">Pastries</h2>
+        </div>
+        <div class="cakes-grid" id="pastries-grid"></div>
+        <div class="show-more-wrap"><button class="show-more-btn" id="pastries-btn">Show More <span class="btn-shadow"></span></button></div>
 
-            <div class="info-row">
-                <span>Eggless Available</span>
-                <span style="font-weight:700;">₹100</span>
+        <div class="gallery-modal" id="gallery">
+            <div class="gallery-content">
+                <button class="close-btn" onclick="closeGallery()">✕</button>
             </div>
-
-            <div class="info-row">
-                <span>Free Birthday Tag</span>
-                <span style="font-weight:700;">₹0</span>
-            </div>
-
-            <div class="info-row">
-                <span>Delivery Charge</span>
-                <span style="font-weight:700;">₹40</span>
-            </div>
-
         </div>
-
-    </div>
-
-</div>
-<div class="cake-card">
-
-    <div class="cake-image-section">
-        <img src="https://picsum.photos/400/400" alt="Cake">
-
-        <button class="view-images-btn" onclick="openGallery()">
-            View Images
-        </button>
-    </div>
-
-    <div class="cake-details">
-
-        <div class="top-row">
-            <h2>Chocolate Truffle Cake</h2>
-        </div>
-
-        <div class="badges">
-            <span>1/2 Kg</span>
-            <span>16 PCS</span>
-        </div>
-
-        <div class="info-table">
-
-            <div class="info-row">
-                <span>Eggless Available</span>
-                <span style="font-weight:700;">₹100</span>
-            </div>
-
-            <div class="info-row">
-                <span>Free Birthday Tag</span>
-                <span style="font-weight:700;">₹0</span>
-            </div>
-
-            <div class="info-row">
-                <span>Delivery Charge</span>
-                <span style="font-weight:700;">₹40</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<div class="cake-card">
-
-    <div class="cake-image-section">
-        <img src="https://picsum.photos/400/400" alt="Cake">
-
-        <button class="view-images-btn" onclick="openGallery()">
-            View Images
-        </button>
-    </div>
-
-    <div class="cake-details">
-
-        <div class="top-row">
-            <h2>Chocolate Truffle Cake</h2>
-        </div>
-
-        <div class="badges">
-            <span>1/2 Kg</span>
-            <span>16 PCS</span>
-        </div>
-
-        <div class="info-table">
-
-            <div class="info-row">
-                <span>Eggless Available</span>
-                <span style="font-weight:700;">₹100</span>
-            </div>
-
-            <div class="info-row">
-                <span>Free Birthday Tag</span>
-                <span style="font-weight:700;">₹0</span>
-            </div>
-
-            <div class="info-row">
-                <span>Delivery Charge</span>
-                <span style="font-weight:700;">₹40</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-</div>
-
-
-
-<div class="gallery-modal" id="gallery">
-
-    <div class="gallery-content">
-
-        <button class="close-btn" onclick="closeGallery()">
-            ✕
-        </button>
-
-        <img src="https://picsum.photos/800/500?1" alt="">
-        <img src="https://picsum.photos/800/500?2" alt="">
-        <img src="https://picsum.photos/800/500?3" alt="">
-        <img src="https://picsum.photos/800/500?4" alt="">
-
-    </div>
-
-</div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadSection("menu/brownies/data.txt", "brownies-grid", "brownies", "brownies");
+            loadSection("menu/specials/data.txt", "specials-grid", "specials", "specials");
+            loadSection("menu/cakes/data.txt", "cakes-grid", "cakes", "cakes");
+            loadSection("menu/pastries/data.txt", "pastries-grid", "pastries", "pastries");
+        });
+    </script>
 
     
 

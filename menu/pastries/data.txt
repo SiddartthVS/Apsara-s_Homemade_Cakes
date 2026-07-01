@@ -1,0 +1,20 @@
+TITLE: Chocolate Pastry
+IMAGES: chocpastry1.jpg, chocpastry2.jpg
+BADGES: 6 PCS, 12 PCS
+INFO: Per Piece-₹40, Box of 6-₹200, Delivery Charge-₹30
+---
+TITLE: Fruit Pastry
+IMAGES: fruitpastry1.jpg, fruitpastry2.jpg
+BADGES: 6 PCS, 12 PCS
+INFO: Fresh Fruits-₹50, Per Piece-₹50, Delivery Charge-₹30
+---
+TITLE: Pineapple Pastry
+IMAGES: pinepastry1.jpg, pinepastry2.jpg, pinepastry3.jpg
+BADGES: 6 PCS
+INFO: Per Piece-₹45, Box of 6-₹250, Delivery Charge-₹30
+---
+TITLE: Red Velvet Pastry
+IMAGES: redpastry1.jpg, redpastry2.jpg
+BADGES: 6 PCS, 12 PCS
+INFO: Cream Cheese-₹55, Per Piece-₹55, Delivery Charge-₹30
+---
