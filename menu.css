@@ -2,18 +2,25 @@
     display:grid;
     grid-template-columns:1fr;
     gap:20px;
-    width:100%;
+    width:90%;
+    margin:0 auto;
 }
 
 .cake-card{
     width:min(1200px,100%);
     min-height:220px;
-    background:white;
+    background:#FCF8F5;
     border-radius:24px;
     padding:16px;
     display:flex;
     gap:16px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.cake-card:hover{
+    transform:scale(1.03);
+    box-shadow:0 20px 50px rgba(0,0,0,.18);
 }
 
 .cake-image-section{
@@ -36,7 +43,7 @@
     padding:12px;
     border:none;
     border-radius:999px;
-    background:#222;
+    background:#4E2A1D;
     color:white;
     cursor:pointer;
 }
@@ -67,32 +74,46 @@
 .badges span{
     padding:8px 18px;
     border-radius:999px;
-    background:#dc3545;
+    background:#9E1B32;
     color:white;
     border:none;
     font-weight:700;
 }
 
 .info-table{
-    border:2px solid #eee;
+    border:2px solid rgba(241,198,205,.4);
     border-radius:14px;
-    overflow:visible;
+    overflow:hidden;
     font-size:12px;
+    min-width:0;
 }
 
 .info-row{
     display:flex;
     justify-content:space-between;
     padding:12px 16px;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid rgba(241,198,205,.4);
+    overflow:hidden;
+    min-width:0;
+}
+
+.info-row span{
+    overflow:hidden;
+    word-break:break-word;
+    min-width:0;
+}
+
+.info-row span:last-child{
+    white-space:nowrap;
+    flex-shrink:0;
 }
 
 .info-row:nth-child(odd){
-    background:#ffe8e8;
+    background:rgba(241,198,205,.35);
 }
 
 .info-row:nth-child(even){
-    background:#fff7e6;
+    background:rgba(252,248,245,.8);
 }
 
 .info-row:last-child{
@@ -124,7 +145,7 @@
     width:min(1000px,100%);
     max-height:90vh;
     overflow:auto;
-    background:white;
+    background:#FCF8F5;
     border-radius:20px;
     padding:20px;
     position:relative;
@@ -196,9 +217,34 @@
     display:none;
 }
 
+.decorated-heading{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    font-size:2rem;
+    color:#D4AF37;
+    margin:0;
+    padding-top:10px;
+}
+
+.heading-diamond{
+    color:#D4AF37;
+    font-size:1.2rem;
+}
+
+.heading-line{
+    flex:1;
+    max-width:160px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#D4AF37,transparent);
+}
+
 .show-more-wrap{
     text-align:center;
     margin-top:20px;
+    overflow:hidden;
+    padding-bottom:10px;
 }
 
 .show-more-btn{
@@ -206,7 +252,7 @@
     padding:14px 36px;
     border:none;
     border-radius:999px;
-    background:#222;
+    background:#4E2A1D;
     color:white;
     font-size:1rem;
     font-weight:600;
