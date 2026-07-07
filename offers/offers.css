@@ -111,11 +111,11 @@
 
     overflow: hidden;
 
-    background-color: #f2f2f2;
+    background-color: #F5E6D3;
     border-radius: 10px;
 
     perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
+    box-shadow: 0 0 0 5px rgba(245,230,211,.5);
 
     transition:
         flex 0.8s ease,
@@ -138,7 +138,7 @@
     padding: 20px;
     box-sizing: border-box;
 
-    background-color: #f2f2f27c;
+    background-color: rgba(245,230,211,.49);
 
     transform: rotateX(-90deg);
     transform-origin: bottom;
@@ -156,7 +156,7 @@
     font-size: 24px;
     font-weight: 700;
 
-    color: #333;
+    color: #5C1A2A;
 }
 
 .card__description {
@@ -165,7 +165,7 @@
     font-size: 14px;
     line-height: 1.4;
 
-    color: #111;
+    color: #4A1520;
 }
 
 @media (max-width: 768px) {
