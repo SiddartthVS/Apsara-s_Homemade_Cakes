@@ -1,5 +1,5 @@
 async function loadSocialLinks() {
-    const text = await (await fetch("socials.txt")).text();
+    const text = await (await fetch("socials/socials.txt")).text();
 
     const links = {};
 
