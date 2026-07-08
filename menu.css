@@ -84,7 +84,7 @@
     border:2px solid rgba(196,168,130,.4);
     border-radius:14px;
     overflow:hidden;
-    font-size:12px;
+    font-size:10px;
     min-width:0;
 }
 
@@ -209,7 +209,7 @@
 
     .info-row{
         padding:8px 10px;
-        font-size:.8rem;
+        font-size:.65rem;
     }
 }
 

@@ -1,7 +1,7 @@
-TITLE: Chocolate Truffle Brownie
+TITLE: Classic Brownie
 IMAGES: chocolate1.jpg, chocolate2.jpg, chocolate3.jpg
 BADGES: 1/2 Kg, 16 PCS
-INFO: Eggless Available-₹100, Free Birthday Tag-₹0, Delivery Charge-₹40
+INFO: Classic crinkle top with no toppings-₹399, Topped with chocochip-₹449,Topped with dark chocolate frosting (single frosting)-₹449,Topped with dark chocolate frosting with white chocochip (single frosting)-₹499
 ---
 TITLE: Red Velvet Brownie
 IMAGES: velvet1.jpg, velvet2.jpg
