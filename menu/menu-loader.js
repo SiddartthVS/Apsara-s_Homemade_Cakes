@@ -54,7 +54,7 @@ function setupShowMore(containerId, gridId) {
 
     function applyLimit() {
         const isMobile = window.innerWidth <= 768;
-        const limit = isMobile ? 3 : 4;
+        const limit = isMobile ? 2 : 4;
         cards.forEach((c, i) => {
             if (i >= limit) c.classList.add("cake-hidden");
             else c.classList.remove("cake-hidden");

@@ -1,3 +1,50 @@
+#offers{
+    background:#FDF6EC;
+}
+
+#menu{
+    position:relative;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent calc(-650% / 13) calc(50% / 13),
+            rgba(196,30,58,.12) 0 calc(100% / 13),
+            transparent 0 calc(150% / 13),
+            rgba(196,30,58,.12) 0 calc(200% / 13),
+            transparent 0 calc(250% / 13),
+            rgba(196,30,58,.12) 0 calc(300% / 13)
+        ),
+        repeating-linear-gradient(
+            45deg,
+            transparent calc(-650% / 13) calc(50% / 13),
+            rgba(196,30,58,.12) 0 calc(100% / 13),
+            transparent 0 calc(150% / 13),
+            rgba(196,30,58,.12) 0 calc(200% / 13),
+            transparent 0 calc(250% / 13),
+            rgba(196,30,58,.12) 0 calc(300% / 13)
+        ) 32px 32px,
+        repeating-linear-gradient(
+            -45deg,
+            transparent calc(-650% / 13) calc(50% / 13),
+            rgba(196,30,58,.12) 0 calc(100% / 13),
+            transparent 0 calc(150% / 13),
+            rgba(196,30,58,.12) 0 calc(200% / 13),
+            transparent 0 calc(250% / 13),
+            rgba(196,30,58,.12) 0 calc(300% / 13)
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent calc(-650% / 13) calc(50% / 13),
+            rgba(196,30,58,.12) 0 calc(100% / 13),
+            transparent 0 calc(150% / 13),
+            rgba(196,30,58,.12) 0 calc(200% / 13),
+            transparent 0 calc(250% / 13),
+            rgba(196,30,58,.12) 0 calc(300% / 13)
+        ) 32px 32px #FADADD;
+    background-size:64px 64px;
+    padding-bottom:40px;
+}
+
 .cakes-grid{
     display:grid;
     grid-template-columns:1fr;
