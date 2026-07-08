@@ -191,11 +191,11 @@
     }
 
     .cake-image-section{
-        width:38%;
+        width:30%;
     }
 
     .cake-details{
-        width:62%;
+        width:70%;
     }
 
     .top-row h2{
@@ -210,6 +210,50 @@
     .info-row{
         padding:8px 10px;
         font-size:.65rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .cake-card{
+        flex-direction:column;
+        padding:12px;
+        gap:12px;
+    }
+
+    .cake-image-section{
+        width:100%;
+    }
+
+    .cake-details{
+        width:100%;
+    }
+
+    .top-row h2{
+        font-size:.9rem;
+    }
+
+    .badges span{
+        padding:5px 8px;
+        font-size:.7rem;
+    }
+
+    .info-row{
+        padding:6px 8px;
+        font-size:.6rem;
+    }
+
+    .decorated-heading{
+        font-size:1.4rem;
+        gap:8px;
+    }
+
+    .heading-diamond{
+        font-size:.9rem;
+    }
+
+    .heading-line{
+        max-width:60px;
     }
 }
 

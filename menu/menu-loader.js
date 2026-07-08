@@ -29,10 +29,12 @@ function renderCard(item, folder) {
         `<div class="info-row"><span>${r.label}</span><span style="font-weight:700;">${r.price}</span></div>`
     ).join("");
 
+    const viewBtn = imgs.length > 1 ? `<button class="view-images-btn" onclick="openCardGallery(this)">View Images</button>` : "";
+
     return `<div class="cake-card" data-images='${JSON.stringify(imgs)}'>
         <div class="cake-image-section">
             <img src="${defaultImg}" alt="${item.title}">
-            <button class="view-images-btn" onclick="openCardGallery(this)">View Images</button>
+            ${viewBtn}
         </div>
         <div class="cake-details">
             <div class="top-row"><h2>${item.title}</h2></div>
