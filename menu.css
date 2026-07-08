@@ -35,6 +35,7 @@
     object-fit:cover;
     border-radius:10px;
     display:block;
+    border:3px solid #C41E3A;
 }
 
 .view-images-btn{
@@ -222,7 +223,8 @@
     }
 
     .cake-image-section{
-        width:100%;
+        width:90%;
+        margin:0 auto;
     }
 
     .cake-details{
