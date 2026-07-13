@@ -4,44 +4,7 @@
 
 #menu{
     position:relative;
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent calc(-650% / 13) calc(50% / 13),
-            rgba(196,30,58,.12) 0 calc(100% / 13),
-            transparent 0 calc(150% / 13),
-            rgba(196,30,58,.12) 0 calc(200% / 13),
-            transparent 0 calc(250% / 13),
-            rgba(196,30,58,.12) 0 calc(300% / 13)
-        ),
-        repeating-linear-gradient(
-            45deg,
-            transparent calc(-650% / 13) calc(50% / 13),
-            rgba(196,30,58,.12) 0 calc(100% / 13),
-            transparent 0 calc(150% / 13),
-            rgba(196,30,58,.12) 0 calc(200% / 13),
-            transparent 0 calc(250% / 13),
-            rgba(196,30,58,.12) 0 calc(300% / 13)
-        ) 32px 32px,
-        repeating-linear-gradient(
-            -45deg,
-            transparent calc(-650% / 13) calc(50% / 13),
-            rgba(196,30,58,.12) 0 calc(100% / 13),
-            transparent 0 calc(150% / 13),
-            rgba(196,30,58,.12) 0 calc(200% / 13),
-            transparent 0 calc(250% / 13),
-            rgba(196,30,58,.12) 0 calc(300% / 13)
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent calc(-650% / 13) calc(50% / 13),
-            rgba(196,30,58,.12) 0 calc(100% / 13),
-            transparent 0 calc(150% / 13),
-            rgba(196,30,58,.12) 0 calc(200% / 13),
-            transparent 0 calc(250% / 13),
-            rgba(196,30,58,.12) 0 calc(300% / 13)
-        ) 32px 32px #FADADD;
-    background-size:64px 64px;
+    background:#FDF6EC;
     padding-bottom:40px;
 }
 
@@ -294,7 +257,7 @@
 
     .decorated-heading{
         font-size:1.4rem;
-        gap:8px;
+        padding:10px 24px;
     }
 
     .heading-diamond{
@@ -312,25 +275,26 @@
 
 .decorated-heading{
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:16px;
-    font-size:2rem;
+    gap:0;
+    font-family:'EB Garamond',serif;
+    font-size:clamp(2rem, 5vw, 4rem);
     color:#E8C840;
     margin:0;
-    padding-top:10px;
+    margin-bottom:24px;
+    padding:0;
+    letter-spacing:2px;
+    text-align:center;
 }
 
 .heading-diamond{
-    color:#E8C840;
-    font-size:1.2rem;
+    display:none;
 }
 
 .heading-line{
-    flex:1;
-    max-width:160px;
-    height:2px;
-    background:linear-gradient(90deg,transparent,#E8C840,transparent);
+    display:none;
 }
 
 .show-more-wrap{

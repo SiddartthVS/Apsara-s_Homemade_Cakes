@@ -22,7 +22,7 @@ function parseData(txt) {
 }
 
 function renderCard(item, folder) {
-    const imgs = (item.images || []).map(i => `menu/${folder}/${i}`);
+    const imgs = (item.images || []).map(i => `images/${i}`);
     const defaultImg = imgs[0] || "https://picsum.photos/400/400";
     const badges = (item.badges || []).map(b => `<span>${b}</span>`).join("");
     const rows = (item.info || []).map(r =>
