@@ -300,13 +300,14 @@
 
 .show-more-wrap{
     text-align:center;
-    margin-top:20px;
+    margin-top:10px;
     overflow:hidden;
     padding-bottom:10px;
 }
 
 .show-more-btn{
     position:relative;
+    z-index:999;
     padding:14px 36px;
     border:none;
     border-radius:999px;
@@ -320,7 +321,7 @@
 }
 
 .show-more-btn:hover{
-    transform:scale(1.03);
+    transform:scale(1.02);
 }
 
 .show-more-btn .btn-shadow{

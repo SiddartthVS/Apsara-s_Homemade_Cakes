@@ -63,7 +63,7 @@ function setupShowMore(containerId, gridId) {
         const lastVisible = cards[limit - 1];
         const gridRect = grid.getBoundingClientRect();
         const cardRect = lastVisible.getBoundingClientRect();
-        const maxH = cardRect.bottom - gridRect.top + 20;
+        const maxH = cardRect.bottom - gridRect.top + 5;
         grid.style.maxHeight = maxH + "px";
         grid.classList.add("collapsed");
     }
