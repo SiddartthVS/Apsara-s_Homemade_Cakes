@@ -1,7 +1,7 @@
-TITLE: Classic Brownie
+TITLE: Classic Crinklet-Top Brownies
 IMAGES: chocolate1.jpg
 BADGES: 1/2 Kg, 16 PCS, single-frosting
-INFO: Classic crinkle top with no toppings-₹399, Topped with chocochip-₹449,Topped with dark chocolate frosting-₹449,Topped with dark chocolate frosting with white chocochip-₹499
+INFO: No toppings-₹399, Topped with chocochip-₹449,Topped with dark chocolate frosting-₹449,Topped with dark chocolate frosting with white chocochip-₹499
 ---
 TITLE: Red Velvet Brownie
 IMAGES: velvet1.jpg, velvet2.jpg

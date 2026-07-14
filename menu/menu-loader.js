@@ -55,16 +55,23 @@ function setupShowMore(containerId, gridId) {
     function applyLimit() {
         const isMobile = window.innerWidth <= 768;
         const limit = isMobile ? 2 : 4;
-        cards.forEach((c, i) => {
-            if (i >= limit) c.classList.add("cake-hidden");
-            else c.classList.remove("cake-hidden");
-        });
+        if (cards.length <= limit) {
+            grid.classList.remove("collapsed");
+            grid.style.maxHeight = "";
+            return;
+        }
+        const lastVisible = cards[limit - 1];
+        const gridRect = grid.getBoundingClientRect();
+        const cardRect = lastVisible.getBoundingClientRect();
+        const maxH = cardRect.bottom - gridRect.top + 20;
+        grid.style.maxHeight = maxH + "px";
+        grid.classList.add("collapsed");
     }
 
     function toggleShow() {
-        const isHidden = grid.querySelector(".cake-hidden");
-        if (isHidden) {
-            cards.forEach(c => c.classList.remove("cake-hidden"));
+        if (grid.classList.contains("collapsed")) {
+            grid.classList.remove("collapsed");
+            grid.style.maxHeight = "";
             btn.innerHTML = "Show Less <span class='btn-shadow'></span>";
         } else {
             applyLimit();

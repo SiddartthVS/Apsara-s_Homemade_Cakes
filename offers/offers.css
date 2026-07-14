@@ -6,6 +6,9 @@
     position: relative;
     overflow: hidden;
 }
+#offers{
+    background:#FDF6EC;
+}
 
 .offers-bg::before {
     content: "";
@@ -115,7 +118,7 @@
     border-radius: 10px;
 
     perspective: 1000px;
-    box-shadow: 0 0 0 5px rgba(245,230,211,.5);
+    box-shadow: 0 0 0 2px #C41E3A;
 
     transition:
         flex 0.8s ease,
