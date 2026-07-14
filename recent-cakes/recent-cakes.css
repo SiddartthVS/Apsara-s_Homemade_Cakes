@@ -1,0 +1,77 @@
+#recent-cakes {
+    background: #FDF6EC;
+    overflow: hidden;
+    scroll-margin-top: 70px;
+    padding: 10px 0;
+}
+
+.recent-cakes-heading {
+    font-size: clamp(1.4rem, 3vw, 2.4rem) !important;
+    margin-bottom: 16px !important;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.cake-thumb {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #C41E3A;
+    flex-shrink: 0;
+    cursor: pointer;
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.cake-thumb:hover {
+    transform: rotate(0deg) scale(1.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .recent-cakes-heading {
+        font-size: clamp(1.2rem, 4vw, 1.8rem) !important;
+    }
+    .cake-thumb {
+        width: 85px;
+        height: 85px;
+        border-width: 2px;
+        border-radius: 10px;
+    }
+    .marquee-track {
+        gap: 10px;
+        animation-duration: 40s;
+    }
+}
+
+@media (max-width: 480px) {
+    .cake-thumb {
+        width: 70px;
+        height: 70px;
+    }
+    .marquee-track {
+        gap: 8px;
+    }
+}
