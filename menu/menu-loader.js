@@ -52,7 +52,10 @@ function setupShowMore(containerId, gridId) {
     const cards = grid.querySelectorAll(".cake-card");
     if (cards.length <= 4) { btn.style.display = "none"; return; }
 
+    let expanded = false;
+
     function applyLimit() {
+        if (expanded) return;
         const isMobile = window.innerWidth <= 768;
         const limit = isMobile ? 2 : 4;
         if (cards.length <= limit) {
@@ -69,13 +72,18 @@ function setupShowMore(containerId, gridId) {
     }
 
     function toggleShow() {
+        const scrollY = window.scrollY;
         if (grid.classList.contains("collapsed")) {
             grid.classList.remove("collapsed");
             grid.style.maxHeight = "";
+            expanded = true;
             btn.innerHTML = "Show Less <span class='btn-shadow'></span>";
+            window.scrollTo(0, scrollY);
         } else {
+            expanded = false;
             applyLimit();
             btn.innerHTML = "Show More <span class='btn-shadow'></span>";
+            btn.scrollIntoView({ behavior: "instant", block: "center" });
         }
     }
 
@@ -102,6 +110,7 @@ function openCardGallery(btn) {
     });
 
     modal.classList.add("show");
+    document.body.style.overflow = "hidden";
 }
 
 function loadSection(txtFile, gridId, containerId, folder) {
