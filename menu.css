@@ -1,7 +1,27 @@
 #menu{
     position:relative;
-    background:#FDF6EC;
     padding-bottom:40px;
+    background-color:#F5EDE3;
+    background-image:
+        linear-gradient(45deg, rgba(196,168,130,.08) 25%, transparent 25%, transparent 75%, rgba(196,168,130,.08) 75%),
+        linear-gradient(-45deg, rgba(196,168,130,.08) 25%, transparent 25%, transparent 75%, rgba(196,168,130,.08) 75%),
+        linear-gradient(45deg, transparent 40%, rgba(232,200,64,.06) 40%, rgba(232,200,64,.06) 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, rgba(232,200,64,.06) 40%, rgba(232,200,64,.06) 60%, transparent 60%),
+        radial-gradient(circle at 50% 50%, #FFFDF9 0%, #F5EDE3 100%);
+    background-size:60px 60px, 60px 60px, 120px 120px, 120px 120px, 100% 100%;
+    background-position:0 0, 30px 30px, 0 0, 60px 60px, 0 0;
+}
+
+#menu::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(45deg, rgba(196,168,130,.04) 0px, rgba(196,168,130,.04) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(-45deg, rgba(196,168,130,.04) 0px, rgba(196,168,130,.04) 1px, transparent 1px, transparent 10px);
+    background-size:20px 20px;
+    filter:blur(0.5px);
+    pointer-events:none;
 }
 
 .cakes-grid{
@@ -12,6 +32,8 @@
     margin:0 auto;
     align-items:center;
     justify-items:center;
+    position:relative;
+    z-index:1;
 }
 
 .cake-card{
@@ -192,6 +214,14 @@
 
 }
 
+.pc-only{
+    display:block;
+}
+
+.mob-only{
+    display:none;
+}
+
 @media(max-width:768px){
 
     .cake-card{
@@ -223,7 +253,27 @@
     }
 
     .heading-img{
-        height:36px;
+        height:26px;
+    }
+
+    .pc-only{
+        display:none;
+    }
+
+    .mob-only{
+        display:block;
+    }
+}
+
+@media(max-width:992px){
+    .container{
+        width:100%;
+        padding:0 16px;
+    }
+
+    .decorated-heading{
+        border-radius:0;
+        padding:8px 16px;
     }
 }
 
@@ -260,20 +310,12 @@
 
     .decorated-heading{
         font-size:1.4rem;
-        padding:6px 20px;
+        padding:6px 30px;
         gap:8px;
     }
 
     .heading-img{
-        height:24px;
-    }
-
-    .heading-diamond{
-        font-size:.9rem;
-    }
-
-    .heading-line{
-        max-width:60px;
+        height:14px;
     }
 }
 
@@ -290,13 +332,15 @@
     flex-direction:row;
     align-items:center;
     justify-content:center;
+    position:relative;
+    z-index:1;
     gap:16px;
     font-family:'EB Garamond',serif;
-    font-size:clamp(2rem, 5vw, 3.5rem);
+    font-size:clamp(1.5rem, 5vw, 3.5rem);
     color:#E8C840;
     margin:0;
     margin-bottom:24px;
-    padding:8px 60px;
+    padding:8px 100px;
     letter-spacing:2px;
     text-align:center;
     background:rgba(62,34,21,.90);
@@ -313,18 +357,10 @@
 }
 
 .heading-img{
-    height:50px;
+    height:40px;
     width:auto;
     flex-shrink:0;
     filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
-}
-
-.heading-diamond{
-    display:none;
-}
-
-.heading-line{
-    display:none;
 }
 
 .show-more-wrap{
@@ -332,6 +368,8 @@
     margin-top:10px;
     overflow:hidden;
     padding-bottom:10px;
+    position:relative;
+    z-index:1;
 }
 
 .show-more-btn{

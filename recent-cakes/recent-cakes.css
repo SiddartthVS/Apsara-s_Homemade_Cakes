@@ -7,6 +7,7 @@
 
 .recent-cakes-heading {
     font-size: clamp(1.6rem, 4vw, 0.8rem) !important;
+    white-space: nowrap;
 }
 
 .marquee-wrapper {
