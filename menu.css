@@ -10,6 +10,7 @@
         radial-gradient(circle at 50% 50%, #FFFDF9 0%, #F5EDE3 100%);
     background-size:60px 60px, 60px 60px, 120px 120px, 120px 120px, 100% 100%;
     background-position:0 0, 30px 30px, 0 0, 60px 60px, 0 0;
+    box-shadow: 0 0 30px 15px rgba(0,0,0,.2);
 }
 
 #menu::before{
