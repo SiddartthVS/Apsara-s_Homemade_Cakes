@@ -1,0 +1,81 @@
+:root {
+    --font-brand: "Playwrite AU SA", cursive;
+
+    --weight-thin: 100;
+    --weight-extra-light: 200;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semi-bold: 600;
+    --weight-bold: 700;
+
+    --color-ink: #3E2215;
+    --color-gold: #E8C840;
+    --color-red: #C41E3A;
+    --color-cream: #FDF6EC;
+
+    --motion-standard: cubic-bezier(.4, 0, .2, 1);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-brand);
+    font-weight: 300;
+    color: var(--color-ink);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
+.container {
+    width: 70%;
+}
+
+#offers,
+#recent-cakes,
+#menu {
+    scroll-margin-top: 70px;
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}

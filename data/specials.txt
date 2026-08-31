@@ -1,0 +1,15 @@
+TITLE: Wedding Special Cake
+IMAGES: wedding1.jpg, wedding2.jpg, wedding3.jpg
+BADGES: 3 Kg, 50 PCS
+INFO: Custom Design-₹500, Delivery Free-₹0, Advance Booking Required-₹0
+---
+TITLE: Anniversary Premium
+IMAGES: anniversary1.jpg, anniversary2.jpg
+BADGES: 2 Kg, 32 PCS
+INFO: Photo Cake Option-₹200, Free Message Tag-₹0, Delivery Charge-₹50
+---
+TITLE: Birthday Deluxe
+IMAGES: birthday1.jpg, birthday2.jpg, birthday3.jpg
+BADGES: 1.5 Kg, 24 PCS
+INFO: Candle Set Included-₹50, Balloon Decoration-₹100, Delivery Charge-₹40
+---

@@ -21,7 +21,7 @@ function parseData(txt) {
     }).filter(Boolean);
 }
 
-function renderCard(item, folder) {
+function renderCard(item) {
     const imgs = (item.images || []).map(i => `images/test/${i}`);
     const defaultImg = imgs[0] || "https://picsum.photos/400/400";
     const badges = (item.badges || []).map(b => `<span>${b}</span>`).join("");
@@ -113,14 +113,14 @@ function openCardGallery(btn) {
     document.body.style.overflow = "hidden";
 }
 
-function loadSection(txtFile, gridId, containerId, folder) {
+function loadSection(txtFile, gridId, containerId) {
     fetch(txtFile)
         .then(r => r.text())
         .then(txt => {
             const items = parseData(txt);
             const grid = document.getElementById(gridId);
             if (!grid) return;
-            grid.innerHTML = items.map(item => renderCard(item, folder)).join("");
+            grid.innerHTML = items.map(renderCard).join("");
             setupShowMore(containerId, gridId);
         })
         .catch(() => {});
