@@ -2,22 +2,20 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: "Playwrite AU SA", cursive;
+    font-weight: 300;
 }
 
-/* Font */
-
-.edu-nsw-act-cursive-semibold {
-    font-family: "Edu NSW ACT Cursive", cursive;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+button,
+input {
+    font: inherit;
 }
 
-.edu-nsw-act-cursive-bold {
-    font-family: "Edu NSW ACT Cursive", cursive;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    line-height: 1.15;
 }
 
 .home-logo {
@@ -166,7 +164,7 @@ body {
     color: var(--aps-gray);
 
     font-size: .85rem;
-    font-weight: 500;
+    font-weight: 350;
     letter-spacing: .3px;
 
     white-space: nowrap;
@@ -198,7 +196,7 @@ body {
 
 .aps-menu-label:has(input:checked) span {
     color: var(--aps-orange);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* Mobile */

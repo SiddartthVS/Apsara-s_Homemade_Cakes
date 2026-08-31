@@ -26,7 +26,7 @@ function renderCard(item, folder) {
     const defaultImg = imgs[0] || "https://picsum.photos/400/400";
     const badges = (item.badges || []).map(b => `<span>${b}</span>`).join("");
     const rows = (item.info || []).map(r =>
-        `<div class="info-row"><span>${r.label}</span><span style="font-weight:700;">${r.price}</span></div>`
+        `<div class="info-row"><span>${r.label}</span><span class="price">${r.price}</span></div>`
     ).join("");
 
     const viewBtn = imgs.length > 1 ? `<button class="view-images-btn" onclick="openCardGallery(this)">View Images</button>` : "";

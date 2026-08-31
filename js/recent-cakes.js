@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function buildSet(imgs) {
         return imgs.map(function (src) {
             var t = randomTilt();
-            return '<img src="recent-cakes/' + src + '" alt="" class="cake-thumb" style="--tilt:' + t + 'deg">';
+            return '<img src="images/recent-cakes/' + src + '" alt="" class="cake-thumb" style="--tilt:' + t + 'deg">';
         }).join("\n");
     }
 
