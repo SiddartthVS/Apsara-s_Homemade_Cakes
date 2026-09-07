@@ -1,25 +1,40 @@
-TITLE: Classic Crinklet-Top Brownies
-IMAGES: chocolate1.jpg
-BADGES: 1/2 Kg, 16 PCS, single-frosting
-INFO: No toppings-₹399, Topped with chocochip-₹449,Topped with dark chocolate frosting-₹449,Topped with dark chocolate frosting with white chocochip-₹499
----
-TITLE: Red Velvet Brownie
-IMAGES: velvet1.jpg, velvet2.jpg
-BADGES: 1 Kg, 20 PCS
-INFO: Eggless Available-₹150, Delivery Charge-₹40
----
-TITLE: Walnut Brownie
-IMAGES: walnut1.jpg, walnut2.jpg, walnut3.jpg
-BADGES: 1/2 Kg, 12 PCS
-INFO: Premium Nuts-₹120, Delivery Charge-₹40
----
-TITLE: Double Chocolate Brownie
-IMAGES: double1.jpg, double2.jpg
-BADGES: 1/2 Kg, 16 PCS
-INFO: Extra Chocolate-₹130, Eggless Available-₹100, Delivery Charge-₹40
----
-TITLE: Classic Brownie
-IMAGES: classic1.jpg, classic2.jpg, classic3.jpg
-BADGES: 1 Kg, 24 PCS
-INFO: Bestseller-₹90, Delivery Charge-₹40
----
+
+Signature Brownies
+Classic crinkle top Brownie (1/2 kg | 16 pieces) - ₹ 399
+Brownie Topped with Dark Chocolate Frosting - ₹ 449
+Brownie Topped with Choco-chips - ₹ 449
+Brownie Topped with Dark Chocolate Frosting & White Choco-chips - ₹ 499
+
+Assorted Brownies
+A delicious blend featuring dark chocolate, white chocolate, dark choco-chips, white choco-chips, cashew nuts, and almonds.
+Assorted Brownies Box (1/2 kg | 30 pieces) - ₹ 499
+Assorted Brownies with Choco-dip (30 pieces) - ₹ 549
+Mini Assorted Brownies Box (250g | 9 pieces) - ₹ 399
+
+Brownie Towers
+Brownie Tower Topped with Dark & Milk Chocolate Frosting (1 kg | 32 pieces + 8 pieces homemade chocolate) - ₹ 999
+Double-Frosted Dark Chocolate Brownie Tower (1 kg | 32 pieces + 8 pieces homemade chocolate) - ₹ 999
+Fresh Strawberry & Dark Chocolate Frosting Brownie Tower (1 kg | 32 pieces) - ₹ 999
+
+Healthy Brownies
+Classic Ragi Brownies (1/2 kg | 16 pieces) - ₹ 399
+Roasted Nuts Ragi Brownies (1/2 kg | 16 pieces) - ₹ 499
+Whole Wheat Brownies (1 kg | 32 pieces) - ₹ 799
+High-Fibre Protein Cupcakes / Mixed Seed Cupcakes (8 pieces) - ₹ 199
+
+Triple Chocolate Brownies
+Single Piece Brownie Box (80g) - ₹ 55
+Triple Chocolate Brownie Box (250g) - ₹ 350
+Triple Chocolate Brownie Box (1/2 kg | 16 pieces) - ₹ 549
+
+Dark Chocolate Brownies
+Dark Chocolate Brownie Bites (1/2 kg | 30 pieces) - ₹ 499
+
+Brownie Packs & Cupcakes
+Double-Frosted Brownie Box with Dark & White Frosting and Mixed Choco-chips (250g) - ₹ 299
+Brownie Tub with 6 Assorted Brownie Bites & Choco-dip - ₹ 99
+Classic Brownie Cupcake - ₹ 15
+Nutella Brownie Cupcake Topped with Nutella & Choco-chips - ₹ 22
+
+Birthday Brownie Slabs
+Birthday Brownie Slab Topped with double-frosted dark & white chocolate, and mixed choco-chips - ₹ 550
