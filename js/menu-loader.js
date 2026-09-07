@@ -10,29 +10,65 @@ function parseData(txt) {
             if (lines.length === 0) return null;
 
             const item = {
-                title: lines[0],
+                title: "",
                 images: [],
                 badges: [],
                 description: "",
                 info: []
             };
 
+            item.title = lines[0];
+
             let startIndex = 1;
 
-            if (lines[1] && !/\s-\s*₹\s*[\d,]+(?:\.\d+)?\s*$/.test(lines[1])) {
-                item.description = lines[1];
-                startIndex = 2;
+            if (lines[startIndex] && /^IMAGES\s*:/i.test(lines[startIndex])) {
+                item.images = lines[startIndex]
+                    .replace(/^IMAGES\s*:/i, "")
+                    .split(",")
+                    .map(s => s.trim())
+                    .filter(Boolean);
+
+                startIndex++;
+            }
+
+            if (
+                lines[startIndex] &&
+                !/^\s*(.*?)\s*-\s*₹\s*[\d,]+(?:\.\d+)?\s*$/.test(lines[startIndex])
+            ) {
+                item.description = lines[startIndex];
+                startIndex++;
             }
 
             for (let i = startIndex; i < lines.length; i++) {
-                const match = lines[i].match(/^(.*?)\s*-\s*(₹\s*[\d,]+(?:\.\d+)?)\s*$/);
+                const match = lines[i].match(
+                    /^(.*?)\s*-\s*(₹\s*[\d,]+(?:\.\d+)?)\s*$/
+                );
 
-                if (match) {
-                    item.info.push({
-                        label: match[1].trim(),
-                        price: match[2].trim()
-                    });
+                if (!match) continue;
+
+                let label = match[1].trim();
+                const price = match[2].trim();
+
+                const badgeMatch = label.match(/\(([^()]*)\)\s*$/);
+
+                let rowBadges = [];
+
+                if (badgeMatch) {
+                    rowBadges = badgeMatch[1]
+                        .split("|")
+                        .map(b => b.trim())
+                        .filter(Boolean);
+
+                    label = label
+                        .replace(/\s*\([^()]*\)\s*$/, "")
+                        .trim();
                 }
+
+                item.info.push({
+                    label: label,
+                    badges: rowBadges,
+                    price: price
+                });
             }
 
             return item;
@@ -42,52 +78,60 @@ function parseData(txt) {
 
 
 function renderCard(item) {
-    const imgs = (item.images || []).map(i => `images/test/${i}`);
+    const imgs = (item.images || []).map(i => `images/brownies/${i}`);
     const defaultImg = imgs[0] || "https://picsum.photos/400/400";
-
-    const badges = (item.badges || [])
-        .map(b => `<span>${b}</span>`)
-        .join("");
 
     const description = item.description
         ? `<p class="card-description">${item.description}</p>`
         : "";
 
     const rows = (item.info || [])
-        .map(r =>
-            `<div class="info-row">
-                <span>${r.label}</span>
-                <span class="price">${r.price}</span>
-            </div>`
-        )
+        .map(row => {
+            const rowBadges = (row.badges || [])
+                .map(b => `<span class="row-badge">${b}</span>`)
+                .join("");
+
+            return `
+                <div class="info-row">
+                    <div class="info-label">
+                        <span class="info-name">${row.label}</span>
+                        ${rowBadges ? `<span class="row-badges">${rowBadges}</span>` : ""}
+                    </div>
+
+                    <span class="price">${row.price}</span>
+                </div>
+            `;
+        })
         .join("");
 
     const viewBtn = imgs.length > 1
         ? `<button class="view-images-btn" onclick="openCardGallery(this)">View Images</button>`
         : "";
 
-    return `<div class="cake-card" data-images='${JSON.stringify(imgs)}'>
-        <div class="cake-image-section">
-            <img src="${defaultImg}" alt="${item.title}">
-            ${viewBtn}
+    return `
+        <div class="cake-card" data-images='${JSON.stringify(imgs)}'>
+
+            <div class="cake-image-section">
+                <img src="${defaultImg}" alt="${item.title}">
+                ${viewBtn}
+            </div>
+
+            <div class="cake-details">
+
+                <div class="top-row">
+                    <h2>${item.title}</h2>
+                </div>
+
+                ${description}
+
+                <div class="info-table">
+                    ${rows}
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="cake-details">
-            <div class="top-row">
-                <h2>${item.title}</h2>
-            </div>
-
-            ${description}
-
-            <div class="badges">
-                ${badges}
-            </div>
-
-            <div class="info-table">
-                ${rows}
-            </div>
-        </div>
-    </div>`;
+    `;
 }
 
 
@@ -99,7 +143,7 @@ function setupShowMore(containerId, gridId) {
 
     const cards = grid.querySelectorAll(".cake-card");
 
-    if (cards.length <= 4) {
+    if (cards.length <= 1) {
         btn.style.display = "none";
         return;
     }
@@ -110,21 +154,22 @@ function setupShowMore(containerId, gridId) {
         if (expanded) return;
 
         const isMobile = window.innerWidth <= 768;
-        const limit = isMobile ? 2 : 4;
 
-        if (cards.length <= limit) {
-            grid.classList.remove("collapsed");
-            grid.style.maxHeight = "";
-            return;
-        }
+        const firstCard = cards[0];
+        const secondCard = cards[1];
 
-        const lastVisible = cards[limit - 1];
+        if (!firstCard || !secondCard) return;
+
         const gridRect = grid.getBoundingClientRect();
-        const cardRect = lastVisible.getBoundingClientRect();
+        const secondCardRect = secondCard.getBoundingClientRect();
 
-        const maxH = cardRect.bottom - gridRect.top + 5;
+        const firstCardHeight = firstCard.getBoundingClientRect().height;
 
-        grid.style.maxHeight = maxH + "px";
+        const visibleHeight = isMobile
+            ? firstCardHeight + (firstCardHeight * 0.25)
+            : firstCardHeight + (firstCardHeight * 0.25);
+
+        grid.style.maxHeight = visibleHeight + "px";
         grid.classList.add("collapsed");
     }
 
@@ -162,7 +207,6 @@ function setupShowMore(containerId, gridId) {
     window.addEventListener("resize", applyLimit);
 }
 
-
 function openCardGallery(btn) {
     const card = btn.closest(".cake-card");
     const imgs = JSON.parse(card.dataset.images || "[]");
@@ -192,12 +236,12 @@ function openCardGallery(btn) {
 
 function loadSection(txtFile, gridId, containerId) {
     fetch(txtFile)
-        .then(r => {
-            if (!r.ok) {
+        .then(response => {
+            if (!response.ok) {
                 throw new Error(`Failed to load ${txtFile}`);
             }
 
-            return r.text();
+            return response.text();
         })
         .then(txt => {
             const items = parseData(txt);
