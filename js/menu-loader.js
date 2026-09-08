@@ -76,9 +76,14 @@ function parseData(txt) {
         .filter(Boolean);
 }
 
+function getCloudinaryImageUrl(filename, width = 700) {
+    const publicId = filename.replace(/\.[^/.]+$/, "");
+
+    return `https://res.cloudinary.com/qreur6ez/image/upload/f_auto,q_auto,w_${width}/${publicId}`;
+}
 
 function renderCard(item) {
-    const imgs = (item.images || []).map(i => `images/brownies/${i}`);
+    const imgs = (item.images || []).map(i => getCloudinaryImageUrl(i));
     const defaultImg = imgs[0] || "https://picsum.photos/400/400";
 
     const description = item.description
