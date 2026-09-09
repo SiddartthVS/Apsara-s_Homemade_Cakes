@@ -110,7 +110,7 @@ function renderCard(item) {
         .join("");
 
     const viewBtn = imgs.length > 1
-        ? `<button class="view-images-btn" onclick="openCardGallery(this)">View Images</button>`
+        ? `<button class="view-images-btn" onclick="openCardGallery(this)">View More Photos</button>`
         : "";
 
     return `

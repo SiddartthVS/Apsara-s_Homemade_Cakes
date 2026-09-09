@@ -1,3 +1,3 @@
-TITLE: NO LIVE OFFERS!
-IMAGE: offer1.jpg
-DESCRIPTION: Sorry! no offers were live now..
+//TITLE: NO LIVE OFFERS!
+//IMAGE: offer1.jpg
+//DESCRIPTION: Sorry! no offers were live now..

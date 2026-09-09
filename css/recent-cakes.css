@@ -1,13 +1,71 @@
 #recent-cakes {
-    background: #FDF6EC;
+    position: relative;
     overflow: hidden;
-    padding: 10px 0;
-    box-shadow:inset 0 0 35px 8px rgba(0,0,0,.2);
+
+    background: linear-gradient(180deg,
+            #E5C9A8 0%,
+            #F1DEC3 20%,
+            #F8EAD5 50%,
+            #F0DEC4 80%,
+            #E3C7A5 100%);
+
+    box-shadow:
+        inset 0 18px 32px rgba(62, 34, 21, .18),
+        inset 0 -10px 24px rgba(62, 34, 21, .08);
+
+    padding-top: 14px !important;
+    padding-bottom: 30px !important;
+
+    border-bottom: 1px solid rgba(62, 34, 21, .10);
 }
 
+
+#recent-cakes::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 28px;
+
+    background: linear-gradient(to bottom,
+            rgba(62, 34, 21, .20),
+            rgba(62, 34, 21, .06),
+            transparent);
+
+    pointer-events: none;
+}
+
+
 .recent-cakes-heading {
-    font-size: clamp(1.6rem, 4vw, 0.8rem) !important;
-    white-space: nowrap;
+    position: relative;
+    width: min(700px, 92%);
+    margin: 0 auto 18px;
+
+    padding-bottom: 12px;
+
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+
+    color: rgba(62, 34, 21, .88);
+}
+
+
+.recent-cakes-heading::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+
+    height: 1px;
+
+    background: rgba(62, 34, 21, .45);
 }
 
 .marquee-wrapper {
@@ -29,8 +87,13 @@
 }
 
 @keyframes marquee-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .cake-thumb {
@@ -47,7 +110,7 @@
 
 .cake-thumb:hover {
     transform: rotate(0deg) scale(1.15);
-    box-shadow: 0 6px 20px rgba(0,0,0,.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
     z-index: 2;
 }
 
@@ -55,12 +118,14 @@
     .recent-cakes-heading {
         font-size: clamp(1.3rem, 4vw, 0.8rem) !important;
     }
+
     .cake-thumb {
         width: 120px;
         height: 120px;
         border-width: 2px;
         border-radius: 10px;
     }
+
     .marquee-track {
         gap: 20px;
         animation-duration: 40s;
@@ -69,10 +134,36 @@
 
 @media (max-width: 480px) {
     .cake-thumb {
-        width:120px;
+        width: 120px;
         height: 120px;
     }
+
     .marquee-track {
         gap: 20px;
     }
+}
+
+#recent-cakes {
+    border-bottom: 1px solid rgba(62, 34, 21, .10);
+}
+
+.recent-corner {
+    position: absolute;
+
+    top: 0;
+
+    width: 25%;
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.recent-corner-left {
+    left: 0;
+}
+
+.recent-corner-right {
+    right: 0;
 }

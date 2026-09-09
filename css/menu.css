@@ -31,7 +31,7 @@
     gap: 20px;
     width: 100%;
     margin: 0 auto;
-    align-items: center;
+    align-items: stretch;
     justify-items: center;
     position: relative;
     z-index: 1;
@@ -71,13 +71,25 @@
 
 .view-images-btn {
     width: 100%;
-    margin-top: 12px;
-    padding: 12px;
-    border: none;
+
+    margin-top: 10px;
+    padding: 7px 14px;
+
+    border: 1px solid rgba(62, 34, 21, .25);
     border-radius: 999px;
-    background: #3E2215;
-    color: white;
+
+    background: rgba(62, 34, 21, .06);
+    color: #5A3828;
+
+    font-size: .72rem;
+    font-weight: 400;
+
     cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
 }
 
 .cake-details {
@@ -94,14 +106,16 @@
 }
 
 .top-row h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
 }
 
 .card-description {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.5;
 }
 
@@ -124,7 +138,7 @@
     border: 2px solid rgba(196, 168, 130, .4);
     border-radius: 14px;
     overflow: hidden;
-    font-size: 10px;
+    font-size: .82rem;
     min-width: 0;
 }
 
@@ -141,12 +155,25 @@
 
 .info-label {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     min-width: 0;
     flex: 1;
     padding-right: 10px;
+}
+
+.info-name {
+    min-width: 0;
+    word-break: break-word;
+    line-height: 1.25;
+}
+
+.row-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .info-name {
@@ -179,7 +206,23 @@
 .info-row .price {
     white-space: nowrap;
     flex-shrink: 0;
-    font-weight: 400;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 11px;
+
+    background: rgba(232, 200, 64, .20);
+    color: #4A2A1D;
+
+    border: 1px solid rgba(180, 145, 35, .28);
+    border-radius: 999px;
+
+    font-weight: 500;
+    font-size: .78rem;
+
+    line-height: 1;
 }
 
 .info-row:nth-child(odd) {
@@ -249,7 +292,8 @@
 @media (min-width:992px) {
 
     .cakes-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
     }
 
 }
@@ -279,28 +323,31 @@
     }
 
     .top-row h2 {
-        font-size: 1rem;
-    }
-
-    .badges span {
-        padding: 6px 10px;
-        font-size: .8rem;
+        font-size: 1.15rem;
+        line-height: 1.15;
     }
 
     .card-description {
-        font-size: .8rem;
-        line-height: 1.4;
+        font-size: .9rem;
+        line-height: 1.45;
+    }
+
+    .info-table {
+        font-size: .72rem;
     }
 
     .info-row {
         padding: 8px 10px;
-        font-size: .65rem;
         gap: 8px;
     }
 
     .info-label {
         gap: 5px;
         padding-right: 8px;
+    }
+
+    .info-name {
+        line-height: 1.25;
     }
 
     .row-badges {
@@ -312,16 +359,15 @@
         font-size: .55rem;
     }
 
-    .heading-img {
-        height: 26px;
+    .info-row .price {
+        padding: 4px 8px;
+        font-size: .68rem;
     }
 
-    .pc-only {
-        display: none;
-    }
-
-    .mob-only {
-        display: block;
+    .view-images-btn {
+        margin-top: 8px;
+        padding: 6px 12px;
+        font-size: .62rem;
     }
 }
 
@@ -352,28 +398,31 @@
     }
 
     .top-row h2 {
-        font-size: .9rem;
-    }
-
-    .badges span {
-        padding: 5px 8px;
-        font-size: .7rem;
+        font-size: 1rem;
+        line-height: 1.15;
     }
 
     .card-description {
-        font-size: .72rem;
-        line-height: 1.35;
+        font-size: .82rem;
+        line-height: 1.4;
+    }
+
+    .info-table {
+        font-size: .68rem;
     }
 
     .info-row {
-        padding: 6px 8px;
-        font-size: .6rem;
+        padding: 7px 8px;
         gap: 6px;
     }
 
     .info-label {
         gap: 4px;
         padding-right: 6px;
+    }
+
+    .info-name {
+        line-height: 1.25;
     }
 
     .row-badges {
@@ -385,14 +434,14 @@
         font-size: .52rem;
     }
 
-    .decorated-heading {
-        font-size: 1.4rem;
-        padding: 6px 30px;
-        gap: 8px;
+    .info-row .price {
+        padding: 3px 7px;
+        font-size: .62rem;
     }
 
-    .heading-img {
-        height: 14px;
+    .view-images-btn {
+        padding: 5px 10px;
+        font-size: .56rem;
     }
 }
 
@@ -441,7 +490,7 @@
     color: #E8C840;
     margin: 0;
     margin-bottom: 24px;
-    padding: 8px 100px;
+    padding: 8px 40px;
     letter-spacing: 2px;
     text-align: center;
     background: rgba(62, 34, 21, .90);
@@ -501,4 +550,32 @@
     border-radius: 50%;
     filter: blur(6px);
     pointer-events: none;
+}
+
+@media (max-width:300px) {
+    .decorated-heading .heading-img {
+        display: none !important;
+    }
+
+    .decorated-heading {
+        gap: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .decorated-heading {
+        width: calc(100vw - 24px);
+        max-width: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 500px) {
+    .heading-img {
+        height: 24px;
+    }
 }
