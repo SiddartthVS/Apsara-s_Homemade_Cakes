@@ -146,7 +146,7 @@
 .recent-corner {
     position: absolute;
 
-    top: 0;
+    top: 2px;
 
     width: 25%;
     height: auto;
