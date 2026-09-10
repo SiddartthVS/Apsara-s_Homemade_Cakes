@@ -42,15 +42,18 @@ function renderOfferCard(offer) {
 function renderOffers(offers) {
     const offersSection = document.getElementById("offers");
     const offersContainer = document.getElementById("offers-container");
+    const offersNavBtn = document.querySelector('label[for="aps-offers"]');
 
     if (!offersSection || !offersContainer) return;
 
     if (offers.length === 0) {
         offersSection.style.display = "none";
+        if (offersNavBtn) offersNavBtn.style.display = "none";
         return;
     }
 
     offersSection.style.display = "";
+    if (offersNavBtn) offersNavBtn.style.display = "";
     offersContainer.innerHTML = "";
 
     for (let i = 0; i < offers.length; i += 2) {
@@ -74,7 +77,10 @@ function loadOffers() {
         .catch(error => {
             console.error("Offers loading error:", error);
             const offersSection = document.getElementById("offers");
+            const offersNavBtn = document.querySelector('label[for="aps-offers"]');
+
             if (offersSection) offersSection.style.display = "none";
+            if (offersNavBtn) offersNavBtn.style.display = "none";
         });
 }
 

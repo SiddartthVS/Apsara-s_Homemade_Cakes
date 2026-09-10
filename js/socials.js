@@ -21,7 +21,7 @@ loadSocialLinks();
 
 const socials = document.querySelector('.social-container');
 const home = document.querySelector('#home');
-const contact = document.querySelector('#contact');
+const contact = document.querySelector('#baker-footer');
 
 const observer = new IntersectionObserver((entries) => {
     let centered = false;
