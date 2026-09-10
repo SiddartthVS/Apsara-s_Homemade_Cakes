@@ -1,0 +1,721 @@
+/* =========================================================
+   HOME BAKER FOOTER
+   ========================================================= */
+
+#baker-footer {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 390px;
+
+    box-sizing: border-box;
+
+    padding: 92px 110px 85px 60px;
+
+    border-radius: 30px 30px 0 0;
+
+    background-color: #9B1C2F;
+
+    background-image:
+        linear-gradient(to bottom,
+            transparent 52%,
+            rgba(0, 0, 0, .04) 62%,
+            rgba(0, 0, 0, .30) 80%,
+            rgba(0, 0, 0, .92) 100%),
+        radial-gradient(circle,
+            #E8192C 11%,
+            transparent 12%),
+        radial-gradient(circle,
+            #C41E3A 11%,
+            transparent 12%);
+
+    background-size:
+        100% 100%,
+        42px 42px,
+        42px 42px;
+
+    background-position:
+        0 0,
+        0 0,
+        21px 21px;
+
+    background-repeat:
+        no-repeat,
+        repeat,
+        repeat;
+
+    border-top: 1px solid rgba(232, 200, 64, .45);
+
+    box-shadow:
+        inset 0 18px 32px rgba(62, 34, 21, .22),
+        inset 0 -22px 45px rgba(0, 0, 0, .18),
+        0 -8px 25px rgba(62, 34, 21, .16);
+}
+
+
+/* =========================================================
+   GOLD GIFT RIBBONS
+   ========================================================= */
+
+.footer-ribbon {
+    position: absolute;
+
+    z-index: 4;
+
+    background: #E8C840;
+
+    box-shadow:
+        0 2px 5px rgba(62, 34, 21, .30);
+}
+
+
+/* Horizontal ribbon */
+
+.footer-ribbon-horizontal {
+    top: 42px;
+    left: 0;
+    right: 0;
+
+    height: 22px;
+}
+
+
+/* Vertical ribbon */
+
+.footer-ribbon-vertical {
+    top: 0;
+    right: 68px;
+
+    width: 22px;
+    height: 100%;
+
+    background: #E8C840;
+}
+
+
+/* =========================================================
+   BOW
+   ========================================================= */
+
+.footer-bow {
+    position: absolute;
+
+    top: 8px;
+    right: 40px;
+
+    width: 94px;
+    height: auto;
+
+    z-index: 7;
+
+    transform: rotate(10deg);
+
+    filter:
+        drop-shadow(0 3px 4px rgba(62, 34, 21, .35));
+}
+
+
+/* =========================================================
+   MAIN FOOTER CONTENT
+   ========================================================= */
+
+.footer-main {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1080px, 100%);
+
+    min-height: 270px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 65px;
+}
+
+
+/* =========================================================
+   BAKER SIDE
+   ========================================================= */
+
+.footer-baker {
+    position: relative;
+
+    width: 235px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   BAKER OVAL IMAGE
+   ========================================================= */
+
+.baker-photo-wrap {
+    width: 215px;
+    height: 285px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 6px solid #E8C840;
+
+    background: #F5E6D3;
+
+    box-shadow:
+        0 8px 25px rgba(62, 34, 21, .34);
+}
+
+
+.baker-photo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   BAKER NAME
+   ========================================================= */
+
+.baker-name {
+    width: 100%;
+
+    margin: 9px 0 0;
+
+    color: #E8C840;
+
+    font-size: 1.25rem;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================================================
+   INFORMATION SIDE
+   ========================================================= */
+
+.footer-info {
+    flex: 1;
+
+    min-width: 0;
+
+    max-width: 650px;
+
+    color: #F8EAD5;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   INTRO HEADING
+   ========================================================= */
+
+.footer-info h2 {
+    margin: 0 0 15px;
+
+    color: #E8C840;
+
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.footer-description {
+    max-width: 620px;
+
+    margin-left: 0;
+}
+
+
+.footer-description p {
+    margin: 0 0 11px;
+
+    color: #FFF4E5;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    font-weight: 350;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================================================
+   CONTACT AREA
+   ========================================================= */
+
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+
+.footer-contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 0;
+
+    color: #FFF4E5;
+
+    background: transparent;
+
+    border: none;
+
+    text-decoration: none;
+
+    font-size: .92rem;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .35);
+
+    transition:
+        color .2s ease;
+}
+
+
+.footer-contact-item:hover {
+    color: #E8C840;
+}
+
+
+/* =========================================================
+   CONTACT ICONS
+   ========================================================= */
+
+.footer-contact-icon {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    fill: #E8C840;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #baker-footer {
+        min-height: 320px;
+
+        padding:
+            76px 62px 68px 24px;
+
+        border-radius: 24px 24px 0 0;
+
+        background-size:
+            100% 100%,
+            34px 34px,
+            34px 34px;
+
+        background-position:
+            0 0,
+            0 0,
+            17px 17px;
+    }
+
+
+    /* Ribbon */
+
+    .footer-ribbon-horizontal {
+        top: 31px;
+        height: 16px;
+    }
+
+
+    .footer-ribbon-vertical {
+        top: 0;
+        right: 31px;
+
+        width: 16px;
+        height: 100%;
+
+        background: #E8C840;
+    }
+
+
+    /* Bow */
+
+    .footer-bow {
+        top: 7px;
+        right: 12px;
+
+        width: 62px;
+    }
+
+
+    /* Layout */
+
+    .footer-main {
+        width: 100%;
+
+        min-height: 225px;
+
+        flex-direction: row-reverse;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 28px;
+    }
+
+
+    /* Baker */
+
+    .footer-baker {
+        width: 145px;
+    }
+
+
+    .baker-photo-wrap {
+        width: 140px;
+        height: 190px;
+
+        border-width: 5px;
+    }
+
+
+    .baker-name {
+        margin-top: 7px;
+
+        font-size: .9rem;
+
+        line-height: 1.2;
+    }
+
+
+    /* Information */
+
+    .footer-info {
+        max-width: calc(100% - 170px);
+
+        text-align: left;
+    }
+
+
+    .footer-info h2 {
+        font-size: 1.45rem;
+
+        margin-bottom: 9px;
+    }
+
+
+    .footer-description {
+        max-width: 100%;
+    }
+
+
+    .footer-description p {
+        font-size: .8rem;
+
+        line-height: 1.5;
+
+        margin-bottom: 7px;
+    }
+
+
+    /* Contact */
+
+    .footer-contact {
+        margin-top: 13px;
+
+        gap: 5px;
+    }
+
+
+    .footer-contact-item {
+        gap: 7px;
+
+        font-size: .70rem;
+
+        line-height: 1.4;
+    }
+
+
+    .footer-contact-icon {
+        width: 15px;
+        height: 15px;
+
+        margin-top: 1px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #baker-footer {
+        min-height: 275px;
+
+        padding:
+            60px 42px 58px 12px;
+
+        border-radius: 20px 20px 0 0;
+
+        background-size:
+            100% 100%,
+            29px 29px,
+            29px 29px;
+
+        background-position:
+            0 0,
+            0 0,
+            14.5px 14.5px;
+    }
+
+
+    /* Ribbon */
+
+    .footer-ribbon-horizontal {
+        top: 25px;
+        height: 12px;
+    }
+
+
+    .footer-ribbon-vertical {
+        top: 0;
+        right: 20px;
+
+        width: 12px;
+        height: 100%;
+
+        background: #E8C840;
+    }
+
+
+    /* Bow */
+
+    .footer-bow {
+        top: 6px;
+        right: 7px;
+
+        width: 48px;
+    }
+
+
+    /* Layout */
+
+    .footer-main {
+        min-height: 205px;
+
+        flex-direction: row-reverse;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+
+    /* Baker */
+
+    .footer-baker {
+        width: 100px;
+    }
+
+
+    .baker-photo-wrap {
+        width: 96px;
+        height: 132px;
+
+        border-width: 4px;
+    }
+
+
+    .baker-name {
+        margin-top: 5px;
+
+        font-size: .65rem;
+
+        line-height: 1.15;
+    }
+
+
+    /* Information */
+
+    .footer-info {
+        max-width: calc(100% - 110px);
+
+        text-align: left;
+    }
+
+
+    .footer-info h2 {
+        font-size: 1rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 6px;
+    }
+
+
+    .footer-description p {
+        font-size: .62rem;
+
+        line-height: 1.4;
+
+        margin-bottom: 5px;
+    }
+
+
+    /* Contact */
+
+    .footer-contact {
+        margin-top: 9px;
+
+        gap: 4px;
+    }
+
+
+    .footer-contact-item {
+        gap: 5px;
+
+        font-size: .55rem;
+
+        line-height: 1.3;
+    }
+
+
+    .footer-contact-icon {
+        width: 13px;
+        height: 13px;
+
+        margin-top: 1px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    #baker-footer {
+        padding-left: 8px;
+        padding-right: 34px;
+
+        min-height: 265px;
+    }
+
+
+    .footer-main {
+        gap: 6px;
+    }
+
+
+    .footer-info {
+        max-width: calc(100% - 88px);
+    }
+
+
+    .footer-baker {
+        width: 82px;
+    }
+
+
+    .baker-photo-wrap {
+        width: 78px;
+        height: 108px;
+
+        border-width: 3px;
+    }
+
+
+    .baker-name {
+        font-size: .55rem;
+    }
+
+
+    .footer-info h2 {
+        font-size: .84rem;
+    }
+
+
+    .footer-description p {
+        font-size: .51rem;
+
+        line-height: 1.35;
+    }
+
+
+    .footer-contact-item {
+        font-size: .48rem;
+
+        line-height: 1.3;
+    }
+
+
+    .footer-contact-icon {
+        width: 11px;
+        height: 11px;
+    }
+
+}

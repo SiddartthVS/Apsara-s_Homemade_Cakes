@@ -1,3 +1,37 @@
+const MENU_SECTIONS = [
+    {
+        name: "classics",
+        file: "data/classics.txt",
+        grid: "classics-grid",
+        button: "classics-btn"
+    },
+    {
+        name: "brownies",
+        file: "data/brownies.txt",
+        grid: "brownies-grid",
+        button: "brownies-btn"
+    },
+    {
+        name: "premium",
+        file: "data/premium.txt",
+        grid: "premium-grid",
+        button: "premium-btn"
+    },
+    {
+        name: "themed",
+        file: "data/themed.txt",
+        grid: "themed-grid",
+        button: "themed-btn"
+    },
+    {
+        name: "specials",
+        file: "data/specials.txt",
+        grid: "specials-grid",
+        button: "specials-btn"
+    }
+];
+
+
 function parseData(txt) {
     return txt
         .split(/\n\s*\n/)
@@ -7,7 +41,9 @@ function parseData(txt) {
                 .map(line => line.trim())
                 .filter(Boolean);
 
-            if (lines.length === 0) return null;
+            if (lines.length === 0) {
+                return null;
+            }
 
             const item = {
                 title: "",
@@ -19,112 +55,167 @@ function parseData(txt) {
 
             item.title = lines[0];
 
-            let startIndex = 1;
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i];
+                if (/^IMAGES\s*:/i.test(line)) {
+                    item.images = line
+                        .replace(/^IMAGES\s*:/i, "")
+                        .split(",")
+                        .map(s => s.trim())
+                        .filter(Boolean);
+                    continue;
+                }
 
-            if (lines[startIndex] && /^IMAGES\s*:/i.test(lines[startIndex])) {
-                item.images = lines[startIndex]
-                    .replace(/^IMAGES\s*:/i, "")
-                    .split(",")
-                    .map(s => s.trim())
-                    .filter(Boolean);
-
-                startIndex++;
-            }
-
-            if (
-                lines[startIndex] &&
-                !/^\s*(.*?)\s*-\s*₹\s*[\d,]+(?:\.\d+)?\s*$/.test(lines[startIndex])
-            ) {
-                item.description = lines[startIndex];
-                startIndex++;
-            }
-
-            for (let i = startIndex; i < lines.length; i++) {
-                const match = lines[i].match(
+                const priceMatch = line.match(
                     /^(.*?)\s*-\s*(₹\s*[\d,]+(?:\.\d+)?)\s*$/
                 );
 
-                if (!match) continue;
+                if (priceMatch) {
 
-                let label = match[1].trim();
-                const price = match[2].trim();
+                    let label = priceMatch[1].trim();
+                    const price = priceMatch[2].trim();
 
-                const badgeMatch = label.match(/\(([^()]*)\)\s*$/);
+                    const badgeMatch =
+                        label.match(/\(([^()]*)\)\s*$/);
 
-                let rowBadges = [];
+                    let rowBadges = [];
 
-                if (badgeMatch) {
-                    rowBadges = badgeMatch[1]
-                        .split("|")
-                        .map(b => b.trim())
-                        .filter(Boolean);
+                    if (badgeMatch) {
 
-                    label = label
-                        .replace(/\s*\([^()]*\)\s*$/, "")
-                        .trim();
+                        rowBadges = badgeMatch[1]
+                            .split("|")
+                            .map(badge => badge.trim())
+                            .filter(Boolean);
+
+                        label = label
+                            .replace(/\s*\([^()]*\)\s*$/, "")
+                            .trim();
+                    }
+
+                    item.info.push({
+                        label: label,
+                        badges: rowBadges,
+                        price: price
+                    });
+                    continue;
                 }
 
-                item.info.push({
-                    label: label,
-                    badges: rowBadges,
-                    price: price
-                });
+                if (!item.description) {
+                    item.description = line;
+                }
             }
-
             return item;
+
         })
         .filter(Boolean);
 }
 
+
 function getCloudinaryImageUrl(filename, width = 700) {
-    const publicId = filename.replace(/\.[^/.]+$/, "");
+    const publicId = filename
+        .trim()
+        .replace(/\.[^/.]+$/, "");
 
     return `https://res.cloudinary.com/qreur6ez/image/upload/f_auto,q_auto,w_${width}/${publicId}`;
 }
 
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
 function renderCard(item) {
-    const imgs = (item.images || []).map(i => getCloudinaryImageUrl(i));
-    const defaultImg = imgs[0] || "https://picsum.photos/400/400";
+
+    const imgs = (item.images || [])
+        .map(image => getCloudinaryImageUrl(image));
+
+    const defaultImg =
+        imgs[0] || "images/assets/logo.png";
 
     const description = item.description
-        ? `<p class="card-description">${item.description}</p>`
+        ? `
+            <p class="card-description">
+                ${escapeHTML(item.description)}
+            </p>
+        `
         : "";
 
     const rows = (item.info || [])
         .map(row => {
+
             const rowBadges = (row.badges || [])
-                .map(b => `<span class="row-badge">${b}</span>`)
+                .map(badge =>
+                    `<span class="row-badge">${escapeHTML(badge)}</span>`
+                )
                 .join("");
 
             return `
                 <div class="info-row">
-                    <div class="info-label">
-                        <span class="info-name">${row.label}</span>
-                        ${rowBadges ? `<span class="row-badges">${rowBadges}</span>` : ""}
-                    </div>
 
-                    <span class="price">${row.price}</span>
+                    <div class="info-label">
+
+                        <span class="info-name">
+                            ${escapeHTML(row.label)}
+                        </span>
+
+                        ${rowBadges
+                    ? `
+                                    <span class="row-badges">
+                                        ${rowBadges}
+                                    </span>
+                                `
+                    : ""
+                }
+
+                    </div>
+                    <span class="price">
+                        ${escapeHTML(row.price)}
+                    </span>
+
                 </div>
             `;
         })
         .join("");
 
-    const viewBtn = imgs.length > 1
-        ? `<button class="view-images-btn" onclick="openCardGallery(this)">View More Photos</button>`
-        : "";
+    const viewBtn =
+        imgs.length > 1
+            ? `
+                <button
+                    class="view-images-btn"
+                    onclick="openCardGallery(this)">
+                    View More Photos
+                </button>
+            `
+            : "";
 
     return `
-        <div class="cake-card" data-images='${JSON.stringify(imgs)}'>
+        <div
+            class="cake-card"
+            data-images='${JSON.stringify(imgs)}'>
 
             <div class="cake-image-section">
-                <img src="${defaultImg}" alt="${item.title}">
+                <img
+                    src="${defaultImg}"
+                    alt="${escapeHTML(item.title)}"
+                    loading="lazy"
+                >
+
                 ${viewBtn}
+
             </div>
 
             <div class="cake-details">
-
                 <div class="top-row">
-                    <h2>${item.title}</h2>
+                    <h2>
+                        ${escapeHTML(item.title)}
+                    </h2>
                 </div>
 
                 ${description}
@@ -139,63 +230,90 @@ function renderCard(item) {
     `;
 }
 
+function setupShowMore(gridId, buttonId) {
 
-function setupShowMore(containerId, gridId) {
-    const grid = document.getElementById(gridId);
-    const btn = document.getElementById(containerId + "-btn");
+    const grid =
+        document.getElementById(gridId);
 
-    if (!grid || !btn) return;
+    const btn =
+        document.getElementById(buttonId);
 
-    const cards = grid.querySelectorAll(".cake-card");
-
-    if (cards.length <= 1) {
-        btn.style.display = "none";
+    if (!grid || !btn) {
         return;
     }
 
     let expanded = false;
 
     function applyLimit() {
-        if (expanded) return;
 
-        const isMobile = window.innerWidth <= 768;
+        if (expanded) {
+            return;
+        }
 
+
+        const cards = Array.from(
+            grid.querySelectorAll(".cake-card")
+        );
+
+        if (cards.length <= 1) {
+            btn.style.display = "none";
+            grid.classList.remove("collapsed");
+            grid.style.maxHeight = "";
+            return;
+        }
+
+
+        btn.style.display = "";
         const firstCard = cards[0];
-        const secondCard = cards[1];
-
-        if (!firstCard || !secondCard) return;
-
-        const gridRect = grid.getBoundingClientRect();
-        const secondCardRect = secondCard.getBoundingClientRect();
-
-        const firstCardHeight = firstCard.getBoundingClientRect().height;
-
-        const visibleHeight = isMobile
-            ? firstCardHeight + (firstCardHeight * 0.25)
-            : firstCardHeight + (firstCardHeight * 0.25);
-
-        grid.style.maxHeight = visibleHeight + "px";
+        if (!firstCard) {
+            return;
+        }
+        const firstCardHeight =
+            firstCard.getBoundingClientRect().height;
+        const visibleHeight =
+            firstCardHeight * 1.25;
+        grid.style.maxHeight =
+            visibleHeight + "px";
         grid.classList.add("collapsed");
+        btn.innerHTML =
+            'Show More <span class="btn-shadow"></span>';
     }
 
 
     function toggleShow() {
-        const scrollY = window.scrollY;
+
+        const scrollY =
+            window.scrollY;
+
 
         if (grid.classList.contains("collapsed")) {
+
             grid.classList.remove("collapsed");
+
             grid.style.maxHeight = "";
+
             expanded = true;
 
-            btn.innerHTML = "Show Less <span class='btn-shadow'></span>";
 
-            window.scrollTo(0, scrollY);
+            btn.innerHTML =
+                'Show Less <span class="btn-shadow"></span>';
+
+
+            window.scrollTo(
+                0,
+                scrollY
+            );
+
         } else {
+
             expanded = false;
 
             applyLimit();
 
-            btn.innerHTML = "Show More <span class='btn-shadow'></span>";
+
+            btn.innerHTML =
+                'Show More <span class="btn-shadow"></span>';
+
 
             btn.scrollIntoView({
                 behavior: "instant",
@@ -205,60 +323,186 @@ function setupShowMore(containerId, gridId) {
     }
 
 
-    btn.addEventListener("click", toggleShow);
+    btn.addEventListener(
+        "click",
+        toggleShow
+    );
+
 
     applyLimit();
 
-    window.addEventListener("resize", applyLimit);
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (!expanded) {
+                applyLimit();
+            }
+
+        }
+    );
 }
 
+
 function openCardGallery(btn) {
-    const card = btn.closest(".cake-card");
-    const imgs = JSON.parse(card.dataset.images || "[]");
 
-    if (imgs.length === 0) return;
+    const card =
+        btn.closest(".cake-card");
 
-    const modal = document.getElementById("gallery");
-    const content = modal.querySelector(".gallery-content");
-    const closeBtn = content.querySelector(".close-btn");
 
-    content.querySelectorAll(".cake-card-img").forEach(e => e.remove());
+    if (!card) {
+        return;
+    }
+
+
+    const imgs =
+        JSON.parse(
+            card.dataset.images || "[]"
+        );
+
+
+    if (!imgs.length) {
+        return;
+    }
+
+
+    const modal =
+        document.getElementById("gallery");
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    const content =
+        modal.querySelector(".gallery-content");
+
+
+    if (!content) {
+        return;
+    }
+
+
+    const closeBtn =
+        content.querySelector(".close-btn");
+
+
+    content
+        .querySelectorAll(".cake-card-img")
+        .forEach(img => img.remove());
+
 
     imgs.forEach(src => {
-        const img = document.createElement("img");
+
+        const img =
+            document.createElement("img");
+
 
         img.src = src;
-        img.className = "cake-card-img";
 
-        content.insertBefore(img, closeBtn);
+        img.alt = "";
+
+        img.className =
+            "cake-card-img";
+
+        img.loading = "lazy";
+
+
+        content.insertBefore(
+            img,
+            closeBtn
+        );
     });
+
 
     modal.classList.add("show");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
-function loadSection(txtFile, gridId, containerId) {
-    fetch(txtFile)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${txtFile}`);
-            }
+async function loadSection(section) {
 
-            return response.text();
-        })
-        .then(txt => {
-            const items = parseData(txt);
-            const grid = document.getElementById(gridId);
+    const grid =
+        document.getElementById(section.grid);
 
-            if (!grid) return;
 
-            grid.innerHTML = items.map(renderCard).join("");
+    if (!grid) {
+        return;
+    }
 
-            setupShowMore(containerId, gridId);
-        })
-        .catch(error => {
-            console.error("Menu loading error:", error);
-        });
+
+    try {
+
+        const response =
+            await fetch(
+                section.file,
+                {
+                    cache: "no-cache"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `Failed to load ${section.file}`
+            );
+        }
+
+
+        const txt =
+            await response.text();
+
+
+        const items =
+            parseData(txt);
+
+
+        grid.innerHTML =
+            items
+                .map(renderCard)
+                .join("");
+
+
+        setupShowMore(
+            section.grid,
+            section.button
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            `Menu section "${section.name}" could not be loaded:`,
+            error
+        );
+
+
+        grid.innerHTML = "";
+
+
+        const button =
+            document.getElementById(
+                section.button
+            );
+
+
+        if (button) {
+            button.style.display = "none";
+        }
+    }
+}
+
+
+async function initializeMenu() {
+
+    await Promise.all(
+        MENU_SECTIONS.map(
+            section => loadSection(section)
+        )
+    );
 }

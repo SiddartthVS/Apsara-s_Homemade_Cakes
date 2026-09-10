@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/offers.css">
     <link rel="stylesheet" href="css/recent-cakes.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/about.css">
 
     <script src="js/socials.js"></script>
     <script src="js/home.js"></script>
@@ -143,7 +144,22 @@
     </section>
 
     <section id="menu" class="py-5">
+
         <div class="container align-items-center">
+            <h2 class="decorated-heading">
+                <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
+                <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
+                <span class="heading-text">Classics</span>
+                <img src="images/assets/headingRight.png" alt="" class="heading-img heading-img-right pc-only">
+                <img src="images/assets/MheadingRight.png" alt="" class="heading-img heading-img-right mob-only">
+            </h2>
+        </div>
+        <div class="cakes-grid" id="classics-grid"></div>
+        <div class="show-more-wrap">
+            <button class="show-more-btn" id="classics-btn">Show More <span class="btn-shadow"></span></button>
+        </div>
+
+        <div class="container align-items-center mt-5">
             <h2 class="decorated-heading">
                 <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
                 <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
@@ -153,8 +169,37 @@
             </h2>
         </div>
         <div class="cakes-grid" id="brownies-grid"></div>
-        <div class="show-more-wrap"><button class="show-more-btn" id="brownies-btn">Show More <span
-                    class="btn-shadow"></span></button></div>
+        <div class="show-more-wrap">
+            <button class="show-more-btn" id="brownies-btn">Show More <span class="btn-shadow"></span></button>
+        </div>
+
+        <div class="container align-items-center mt-5">
+            <h2 class="decorated-heading">
+                <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
+                <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
+                <span class="heading-text">Premium</span>
+                <img src="images/assets/headingRight.png" alt="" class="heading-img heading-img-right pc-only">
+                <img src="images/assets/MheadingRight.png" alt="" class="heading-img heading-img-right mob-only">
+            </h2>
+        </div>
+        <div class="cakes-grid" id="premium-grid"></div>
+        <div class="show-more-wrap">
+            <button class="show-more-btn" id="premium-btn">Show More <span class="btn-shadow"></span></button>
+        </div>
+
+        <div class="container align-items-center mt-5">
+            <h2 class="decorated-heading">
+                <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
+                <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
+                <span class="heading-text">Themed</span>
+                <img src="images/assets/headingRight.png" alt="" class="heading-img heading-img-right pc-only">
+                <img src="images/assets/MheadingRight.png" alt="" class="heading-img heading-img-right mob-only">
+            </h2>
+        </div>
+        <div class="cakes-grid" id="themed-grid"></div>
+        <div class="show-more-wrap">
+            <button class="show-more-btn" id="themed-btn">Show More <span class="btn-shadow"></span></button>
+        </div>
 
         <div class="container align-items-center mt-5">
             <h2 class="decorated-heading">
@@ -166,34 +211,9 @@
             </h2>
         </div>
         <div class="cakes-grid" id="specials-grid"></div>
-        <div class="show-more-wrap"><button class="show-more-btn" id="specials-btn">Show More <span
-                    class="btn-shadow"></span></button></div>
-
-        <div class="container align-items-center mt-5">
-            <h2 class="decorated-heading">
-                <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
-                <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
-                <span class="heading-text">Cakes</span>
-                <img src="images/assets/headingRight.png" alt="" class="heading-img heading-img-right pc-only">
-                <img src="images/assets/MheadingRight.png" alt="" class="heading-img heading-img-right mob-only">
-            </h2>
+        <div class="show-more-wrap">
+            <button class="show-more-btn" id="specials-btn">Show More <span class="btn-shadow"></span></button>
         </div>
-        <div class="cakes-grid" id="cakes-grid"></div>
-        <div class="show-more-wrap"><button class="show-more-btn" id="cakes-btn">Show More <span
-                    class="btn-shadow"></span></button></div>
-
-        <div class="container align-items-center mt-5">
-            <h2 class="decorated-heading">
-                <img src="images/assets/headingLeft.png" alt="" class="heading-img heading-img-left pc-only">
-                <img src="images/assets/MheadingLeft.png" alt="" class="heading-img heading-img-left mob-only">
-                <span class="heading-text">Pastries</span>
-                <img src="images/assets/headingRight.png" alt="" class="heading-img heading-img-right pc-only">
-                <img src="images/assets/MheadingRight.png" alt="" class="heading-img heading-img-right mob-only">
-            </h2>
-        </div>
-        <div class="cakes-grid" id="pastries-grid"></div>
-        <div class="show-more-wrap"><button class="show-more-btn" id="pastries-btn">Show More <span
-                    class="btn-shadow"></span></button></div>
 
         <div class="gallery-modal" id="gallery">
             <div class="gallery-content">
@@ -202,12 +222,53 @@
         </div>
     </section>
 
+    <footer id="baker-footer">
+        <div class="footer-ribbon footer-ribbon-horizontal"></div>
+        <div class="footer-ribbon footer-ribbon-vertical"></div>
+        <img src="images/assets/bow.png" alt="" class="footer-bow">
+        <div class="footer-main">
+            <div class="footer-info">
+                <div class="footer-description">
+                    <p>Your short description about the home baker goes here.</p>
+                </div>
+                <div class="footer-contact">
+                    <a href="tel:+919042672949" class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="footer-contact-icon">
+                            <path fill="inherit"
+                                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58z" />
+                        </svg>
+                        <span class="contact-value">
+                            +91 9042672949
+                        </span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="footer-contact-icon">
+                            <path fill="inherit"
+                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                        </svg>
+                        <span class="contact-value">
+                            234/5 Nethaji Nagar,<br>
+                            B. Kumarapalayam,<br>
+                            Namakkal-638183.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-baker">
+                <div class="baker-photo-wrap">
+                    <img src="images/assets/baker.png" alt="Home Baker" class="baker-photo">
+                </div>
+                <h2 class="baker-name">
+                    Sangeetha<br>
+                    Saravanakumar
+                </h2>
+            </div>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            loadSection("data/brownies.txt", "brownies-grid", "brownies");
-            loadSection("data/specials.txt", "specials-grid", "specials");
-            loadSection("data/cakes.txt", "cakes-grid", "cakes");
-            loadSection("data/pastries.txt", "pastries-grid", "pastries");
+            initializeMenu();
         });
     </script>
 

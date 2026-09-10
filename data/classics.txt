@@ -1,0 +1,25 @@
+Black Forest Cake
+A classic favorite with soft chocolate sponge, fresh cream, and sweet cherries.
+IMAGES: blackF1.png, blackF2.png, blackF3.png, blackF4.png, blackF5.jpg, blackF6.jpg, blackF7.jpg
+(1/2 kg) - ₹ 349
+(1 kg) - ₹ 699
+(1 kg | 2 tier) - ₹ 699
+(1.5 kg) - ₹ 999
+(5 kg | 4 tier) - ₹ 2,999
+
+Pineapple Cake
+A soft, sweet vanilla cake filled with fresh and juicy pineapple chunks.
+IMAGES: pineapple1.png, pineapple2.png, pineapple3.png
+(1/2 kg) - ₹ 349
+
+Pista Cake
+A rich and nutty cake loaded with the goodness of real pistachios.
+IMAGES: pista1.png, pista2.png, pista3.png, pista4.png
+(1/2 kg) - ₹ 399
+
+Rosemilk Cake
+A soft sponge cake infused with the nostalgic taste of cool rose milk.
+IMAGES: roseMilk1.png, roseMilk2.png, roseMilk3.png, roseMilk4.png, roseMilk5.png
+Creamed rose milk cake (1/2 kg) - ₹ 399
+Plain rose milk sponge cake (1/2 kg) - ₹ 299
+Plain rose milk sponge cake (1 kg) - ₹ 699
