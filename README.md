@@ -1,7 +1,7 @@
 <h1 align="center">Apsara's Homemade Cakes 🍰</h1>
 
 <div align="center">
-  <a href="https://apsara-shomemadecakes.vercel.app"><strong>View Live Website</strong></a>
+  <a href="https://apsara-s-homemade-cakes.vercel.app/"><strong>View Live Website</strong></a>
 </div>
 <br>
 
