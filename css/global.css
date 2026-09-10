@@ -1,6 +1,5 @@
 :root {
     --font-brand: "Playwrite AU SA", cursive;
-
     --weight-thin: 100;
     --weight-extra-light: 200;
     --weight-light: 300;
@@ -8,12 +7,16 @@
     --weight-medium: 500;
     --weight-semi-bold: 600;
     --weight-bold: 700;
-
-    --color-ink: #3E2215;
+    --color-brown: #3E2215;
     --color-gold: #E8C840;
-    --color-red: #C41E3A;
-    --color-cream: #FDF6EC;
-
+    --color-red: #E8192C;
+    --color-red-secondary: #C41E3A;
+    --color-wine: #9B1C2F;
+    --color-cream: #FFF4E5;
+    --color-cream-alt: #FDF6EC;
+    --color-cream-dark: #F5E6D3;
+    --color-cream-card: #FBF3EA;
+    --color-cream-menu: #F5EDE3;
     --motion-standard: cubic-bezier(.4, 0, .2, 1);
 }
 
@@ -21,9 +24,9 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-brand);
+    color: var(--color-brown);
     font-weight: 300;
-    color: var(--color-ink);
+    font-family: var(--font-brand);
 }
 
 *,
@@ -32,16 +35,16 @@ body {
     box-sizing: border-box;
 }
 
-button,
-input {
-    font: inherit;
-}
-
 h1,
 h2,
 h3 {
     font-weight: 400;
     line-height: 1.15;
+}
+
+button,
+input {
+    font: inherit;
 }
 
 button:focus-visible,

@@ -1,0 +1,22 @@
+{
+  "name": "cakes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node js/generate-recent-cakes.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddartthVS/Apsara-s_Homemade_Cakes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SiddartthVS/Apsara-s_Homemade_Cakes/issues"
+  },
+  "homepage": "https://github.com/SiddartthVS/Apsara-s_Homemade_Cakes#readme"
+}

@@ -1,19 +1,11 @@
 #offers {
     position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(180deg,
-            #E8D5BA 0%,
-            #F3E3CC 18%,
-            #EBD6B8 52%,
-            #E2C7A5 100%);
-
-    box-shadow:
-        inset 0 14px 30px rgba(62, 34, 21, .12),
-        inset 0 -14px 30px rgba(62, 34, 21, .10);
-
     padding-top: 32px;
     padding-bottom: 38px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #E8D5BA 0%, #F3E3CC 18%, #EBD6B8 52%, #E2C7A5 100%);
+    border-top: 1px solid rgba(255, 248, 235, .65);
+    box-shadow: inset 0 14px 30px rgba(62, 34, 21, .12), inset 0 -14px 30px rgba(62, 34, 21, .10);
 }
 
 .offers-grid {
@@ -36,38 +28,29 @@
 
 .card {
     position: relative;
-    flex: 1;
-    height: 300px;
-    aspect-ratio: 1 / 1;
-
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
-
+    height: 300px;
     overflow: hidden;
-
-    background-color: #F5E6D3;
+    background-color: var(--color-cream-dark);
     border-radius: 10px;
-
+    box-shadow: 0 0 0 2px var(--color-red-secondary);
+    aspect-ratio: 1 / 1;
     perspective: 1000px;
-    box-shadow: 0 0 0 2px #C41E3A;
-
-    transition:
-        flex 0.8s ease,
-        transform 0.8s ease,
-        filter 0.8s ease;
+    transition: flex 0.8s ease, transform 0.8s ease, filter 0.8s ease;
 }
 
-/* Corner images */
 .card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
     width: 80px;
     height: 80px;
     background: url('../images/test/OcornerLeft.png') top left / contain no-repeat;
-    z-index: 3;
     pointer-events: none;
 }
 
@@ -76,10 +59,10 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 3;
     width: 80px;
     height: 80px;
     background: url('../images/test/OcornerRight.png') top right / contain no-repeat;
-    z-index: 3;
     pointer-events: none;
 }
 
@@ -87,22 +70,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     transition: transform 0.6s ease;
 }
 
 .card__content {
     position: absolute;
     inset: 0;
-
-    padding: 20px;
     box-sizing: border-box;
-
+    padding: 20px;
     background-color: rgba(245, 230, 211, .49);
-
     transform: rotateX(-90deg);
     transform-origin: bottom;
-
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -112,33 +90,29 @@
 
 .card__title {
     margin: 0;
-
-    font-size: 24px;
-    font-weight: 400;
-
     color: #5C1A2A;
+    font-weight: 400;
+    font-size: 24px;
 }
 
 .card__description {
     margin: 10px 0 0;
-
+    color: #4A1520;
     font-size: 14px;
     line-height: 1.4;
-
-    color: #4A1520;
 }
 
 .card__hint {
     position: absolute;
     bottom: 16px;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 13px;
-    color: rgba(255, 255, 255, .85);
-    text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
     z-index: 4;
-    pointer-events: none;
+    color: rgba(255, 255, 255, .85);
+    font-size: 13px;
     white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transform: translateX(-50%);
     transition: opacity 0.3s;
 }
 
@@ -158,7 +132,6 @@
 }
 
 @media (max-width: 768px) {
-
     .container {
         width: 90%;
     }
@@ -173,9 +146,9 @@
     }
 
     .card {
+        flex: none !important;
         width: 100%;
         scale: 0.9 !important;
-        flex: none !important;
     }
 
     .card:hover {
@@ -186,8 +159,4 @@
     .card img:hover {
         transform: scale(2);
     }
-}
-
-#offers {
-    border-top: 1px solid rgba(255, 248, 235, .65);
 }

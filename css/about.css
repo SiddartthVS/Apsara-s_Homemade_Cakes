@@ -1,75 +1,31 @@
-/* =========================================================
-   ABOUT / HOME BAKER FOOTER
-   ========================================================= */
-
 #baker-footer {
     position: relative;
+    box-sizing: border-box;
     width: 100%;
     min-height: 420px;
-    overflow: hidden;
-    box-sizing: border-box;
-
     padding: 82px 100px 72px 55px;
-
-    border-radius: 30px 30px 0 0;
-
-    background-color: #9B1C2F;
-
-    background-image:
-        linear-gradient(to bottom,
-            transparent 48%,
-            rgba(0, 0, 0, .05) 62%,
-            rgba(0, 0, 0, .30) 82%,
-            rgba(0, 0, 0, .94) 100%),
-        radial-gradient(circle,
-            #E8192C 10%,
-            transparent 11%),
-        radial-gradient(circle,
-            #C41E3A 10%,
-            transparent 11%);
-
-    background-size:
-        100% 100%,
-        30px 30px,
-        30px 30px;
-
-    background-position:
-        0 0,
-        0 0,
-        21px 21px;
-
-    background-repeat:
-        no-repeat,
-        repeat,
-        repeat;
-
+    overflow: hidden;
+    background-color: var(--color-wine);
+    background-image: linear-gradient(to bottom, transparent 48%, rgba(0, 0, 0, .05) 62%, rgba(0, 0, 0, .30) 82%, rgba(0, 0, 0, .94) 100%), radial-gradient(circle, var(--color-red) 10%, transparent 11%), radial-gradient(circle, var(--color-red-secondary) 10%, transparent 11%);
+    background-position: 0 0, 0 0, 21px 21px;
+    background-size: 100% 100%, 30px 30px, 30px 30px;
+    background-repeat: no-repeat, repeat, repeat;
     border-top: 1px solid rgba(232, 200, 64, .45);
-
-    box-shadow:
-        inset 0 18px 32px rgba(62, 34, 21, .20),
-        inset 0 -24px 48px rgba(0, 0, 0, .20),
-        0 -8px 25px rgba(62, 34, 21, .14);
+    border-radius: 30px 30px 0 0;
+    box-shadow: inset 0 18px 32px rgba(62, 34, 21, .20), inset 0 -24px 48px rgba(0, 0, 0, .20), 0 -8px 25px rgba(62, 34, 21, .14);
 }
-
-
-/* =========================================================
-   GOLD GIFT RIBBONS
-   ========================================================= */
 
 .footer-ribbon {
     position: absolute;
     z-index: 4;
-
-    background: #E8C840;
-
-    box-shadow:
-        0 2px 5px rgba(62, 34, 21, .28);
+    background: var(--color-gold);
+    box-shadow: 0 2px 5px rgba(62, 34, 21, .28);
 }
 
 .footer-ribbon-horizontal {
     top: 40px;
-    left: 0;
     right: 0;
+    left: 0;
     height: 20px;
 }
 
@@ -78,111 +34,52 @@
     right: 66px;
     width: 22px;
     height: 100%;
-
-    background: #E8C840;
+    background: var(--color-gold);
 }
-
-
-/* =========================================================
-   BOW
-   ========================================================= */
 
 .footer-bow {
     position: absolute;
-    z-index: 8;
-
-    /*
-       The bow is intentionally positioned around the
-       ribbon intersection rather than the section corner.
-    */
     top: 3px;
     right: 13px;
-
+    z-index: 8;
+    display: block;
     width: 125px;
     height: auto;
-
-    display: block;
-
     transform: rotate(9deg);
-
     transform-origin: center center;
-
-    filter:
-        drop-shadow(0 3px 5px rgba(62, 34, 21, .35));
+    filter: drop-shadow(0 3px 5px rgba(62, 34, 21, .35));
 }
-
-
-/* =========================================================
-   MAIN HORIZONTAL LAYOUT
-   ========================================================= */
 
 .footer-main {
     position: relative;
     z-index: 5;
-
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 235px;
+    align-items: center;
+    column-gap: 34px;
     width: 100%;
     min-height: 270px;
-
     margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr) 235px;
-
-    align-items: center;
-
-    column-gap: 34px;
 }
-
-
-/* =========================================================
-   LEFT INFORMATION
-   ========================================================= */
 
 .footer-info {
     min-width: 0;
     max-width: 720px;
-
-    color: #FFF4E5;
-
+    color: var(--color-cream);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     text-align: left;
-
-    font-family:
-        "Segoe UI",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
 }
 
 .footer-info h2 {
     margin: 0 0 11px;
-
-    color: #E8C840;
-
-    /*
-       Keep the decorative script only for the greeting.
-    */
-    font-family:
-        "Playwrite AU SA",
-        cursive;
-
-    font-size: clamp(1.45rem, 2.4vw, 2rem);
-
+    color: var(--color-gold);
     font-weight: 400;
-
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    font-family: "Playwrite AU SA", cursive;
     line-height: 1.2;
-
     text-align: left;
-
-    text-shadow:
-        0 2px 6px rgba(0, 0, 0, .28);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .28);
 }
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
 
 .footer-description {
     max-width: 680px;
@@ -191,215 +88,101 @@
 
 .footer-description p {
     margin: 0;
-
-    color: #FFF4E5;
-
-    font-family:
-        "Segoe UI",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
-    font-size: .98rem;
-
-    line-height: 1.52;
-
+    color: var(--color-cream);
     font-weight: 500;
-
-    text-align: left;
-
+    font-size: .98rem;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.52;
     letter-spacing: .005em;
-
-    text-shadow:
-        0 2px 5px rgba(0, 0, 0, .35);
+    text-align: left;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
 }
-
-
-/* =========================================================
-   PHONE + ADDRESS
-   ========================================================= */
 
 .footer-contact {
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 8px;
-
     margin-top: 15px;
 }
 
 .footer-contact-item {
     display: flex;
-
     align-items: flex-start;
-
     gap: 8px;
-
     padding: 0;
-
-    color: #FFF4E5;
-
-    background: transparent;
-
-    border: none;
-
-    text-decoration: none;
-
-    font-family:
-        "Segoe UI",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
-
-    font-size: .86rem;
-
+    color: var(--color-cream);
     font-weight: 500;
-
+    font-size: .86rem;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     line-height: 1.38;
-
     text-align: left;
-
-    text-shadow:
-        0 2px 5px rgba(0, 0, 0, .35);
-
-    transition:
-        color .2s ease;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+    background: transparent;
+    border: none;
+    transition: color .2s ease;
 }
 
 .footer-contact-item:hover {
-    color: #E8C840;
+    color: var(--color-gold);
 }
 
 .footer-contact-icon {
+    flex-shrink: 0;
     width: 17px;
     height: 17px;
-
-    flex-shrink: 0;
-
     margin-top: 1px;
-
-    fill: #E8C840;
+    fill: var(--color-gold);
 }
-
-
-/* =========================================================
-   RIGHT BAKER AREA
-   ========================================================= */
 
 .footer-baker {
     position: relative;
-
-    width: 235px;
-
-    justify-self: center;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
+    justify-self: center;
+    width: 235px;
 }
-
-
-/* =========================================================
-   OVAL PORTRAIT
-   ========================================================= */
 
 .baker-photo-wrap {
     width: 200px;
     height: 275px;
-
     overflow: hidden;
-
+    background: var(--color-cream-dark);
+    border: 5px solid var(--color-gold);
     border-radius: 50%;
-
-    border: 5px solid #E8C840;
-
-    background: #F5E6D3;
-
-    /*
-       Subtle shadow specifically to separate the
-       oval portrait from the red patterned background.
-    */
-    box-shadow:
-        0 7px 18px rgba(0, 0, 0, .30),
-        0 2px 7px rgba(62, 34, 21, .24);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, .30), 0 2px 7px rgba(62, 34, 21, .24);
 }
 
 .baker-photo {
+    display: block;
     width: 100%;
     height: 100%;
-
-    display: block;
-
     object-fit: cover;
 }
 
-
-/* =========================================================
-   BAKER NAME
-   ========================================================= */
-
 .baker-name {
     width: 100%;
-
     margin: 8px 0 0;
-
-    color: #E8C840;
-
-    /*
-       Decorative script retained here because this
-       is branding rather than body text.
-    */
-    font-family:
-        "Playwrite AU SA",
-        cursive;
-
-    font-size: 1.05rem;
-
+    color: var(--color-gold);
     font-weight: 400;
-
+    font-size: 1.05rem;
+    font-family: "Playwrite AU SA", cursive;
     line-height: 1.2;
-
     text-align: center;
-
-    text-shadow:
-        0 2px 6px rgba(0, 0, 0, .35);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .35);
 }
 
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
 @media (max-width: 768px) {
-
     #baker-footer {
         min-height: 335px;
-
-        padding:
-            63px 44px 80px 20px;
-
+        padding: 63px 44px 80px 20px;
+        background-position: 0 0, 0 0, 17px 17px;
+        background-size: 100% 100%, 24px 24px, 24px 28px;
         border-radius: 24px 24px 0 0;
-
-        background-size:
-            100% 100%,
-            24px 24px,
-            24px 28px;
-
-        background-position:
-            0 0,
-            0 0,
-            17px 17px;
     }
-
-
-    /* ---------- Ribbon ---------- */
 
     .footer-ribbon-horizontal {
         top: 28px;
@@ -411,32 +194,18 @@
         width: 15px;
     }
 
-
-    /* ---------- Bow ---------- */
-
     .footer-bow {
         top: 1px;
         right: 1px;
-
         width: 82px;
-
         transform: rotate(9deg);
     }
 
-
-    /* ---------- Main Layout ---------- */
-
     .footer-main {
-        min-height: 225px;
-
-        grid-template-columns:
-            minmax(0, 1fr) 138px;
-
+        grid-template-columns: minmax(0, 1fr) 138px;
         column-gap: 14px;
+        min-height: 225px;
     }
-
-
-    /* ---------- Information ---------- */
 
     .footer-info {
         max-width: none;
@@ -444,7 +213,6 @@
 
     .footer-info h2 {
         margin-bottom: 8px;
-
         font-size: 1.30rem;
     }
 
@@ -454,24 +222,17 @@
 
     .footer-description p {
         font-size: .86rem;
-
         line-height: 1.48;
     }
 
-
-    /* ---------- Contact ---------- */
-
     .footer-contact {
-        margin-top: 12px;
-
         gap: 6px;
+        margin-top: 12px;
     }
 
     .footer-contact-item {
         gap: 6px;
-
         font-size: .75rem;
-
         line-height: 1.35;
     }
 
@@ -480,9 +241,6 @@
         height: 15px;
     }
 
-
-    /* ---------- Baker ---------- */
-
     .footer-baker {
         width: 138px;
     }
@@ -490,49 +248,24 @@
     .baker-photo-wrap {
         width: 128px;
         height: 181px;
-
         border-width: 4px;
-
-        box-shadow:
-            0 6px 16px rgba(0, 0, 0, .30),
-            0 2px 7px rgba(62, 34, 21, .24);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .30), 0 2px 7px rgba(62, 34, 21, .24);
     }
 
     .baker-name {
         margin-top: 6px;
-
         font-size: .78rem;
     }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 480px) {
-
     #baker-footer {
         min-height: 315px;
-
-        padding:
-            53px 29px 80px 12px;
-
+        padding: 53px 29px 80px 12px;
+        background-position: 0 0, 0 0, 14px 14px;
+        background-size: 100% 100%, 21px 21px, 21px 21px;
         border-radius: 20px 20px 0 0;
-
-        background-size:
-            100% 100%,
-            21px 21px,
-            21px 21px;
-
-        background-position:
-            0 0,
-            0 0,
-            14px 14px;
     }
-
-
-    /* ---------- Ribbon ---------- */
 
     .footer-ribbon-horizontal {
         top: 23px;
@@ -544,86 +277,54 @@
         width: 11px;
     }
 
-
-    /* ---------- Bow ---------- */
-
     .footer-bow {
         top: 0;
         right: -1px;
-
         width: 62px;
-
         transform: rotate(9deg);
     }
 
-
-    /* ---------- Main Layout ---------- */
-
     .footer-main {
-        min-height: 205px;
-
-        grid-template-columns:
-            minmax(0, 1fr) 102px;
-
-        column-gap: 7px;
-
+        grid-template-columns: minmax(0, 1fr) 102px;
         align-items: center;
+        column-gap: 7px;
+        min-height: 205px;
     }
 
-
-    /* ---------- Information ---------- */
-
     .footer-info {
-        max-width: none;
-
         width: 100%;
+        max-width: none;
     }
 
     .footer-info h2 {
-        margin:
-            0 0 7px;
-
+        margin: 0 0 7px;
         font-size: .84rem;
-
         line-height: 1.18;
-
         white-space: nowrap;
     }
 
     .footer-description p {
         font-size: .76rem;
-
         line-height: 1.45;
-
         letter-spacing: 0;
     }
 
-
-    /* ---------- Contact ---------- */
-
     .footer-contact {
-        margin-top: 9px;
-
         gap: 5px;
+        margin-top: 9px;
     }
 
     .footer-contact-item {
         gap: 5px;
-
         font-size: .68rem;
-
         line-height: 1.30;
     }
 
     .footer-contact-icon {
         width: 13px;
         height: 13px;
-
         margin-top: 0;
     }
-
-
-    /* ---------- Baker ---------- */
 
     .footer-baker {
         width: 102px;
@@ -632,39 +333,22 @@
     .baker-photo-wrap {
         width: 98px;
         height: 143px;
-
         border-width: 4px;
-
-        box-shadow:
-            0 6px 17px rgba(0, 0, 0, .30),
-            0 2px 7px rgba(62, 34, 21, .25);
+        box-shadow: 0 6px 17px rgba(0, 0, 0, .30), 0 2px 7px rgba(62, 34, 21, .25);
     }
 
     .baker-name {
         margin-top: 5px;
-
         font-size: .65rem;
-
         line-height: 1.12;
     }
 }
 
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
 @media (max-width: 350px) {
-
     #baker-footer {
         min-height: 300px;
-
-        padding:
-            50px 25px 80px 9px;
+        padding: 50px 25px 80px 9px;
     }
-
-
-    /* ---------- Ribbon ---------- */
 
     .footer-ribbon-horizontal {
         top: 22px;
@@ -676,57 +360,36 @@
         width: 10px;
     }
 
-
-    /* ---------- Bow ---------- */
-
     .footer-bow {
         top: 0;
         right: -1px;
-
         width: 54px;
     }
 
-
-    /* ---------- Main Layout ---------- */
-
     .footer-main {
-        min-height: 195px;
-
-        grid-template-columns:
-            minmax(0, 1fr) 88px;
-
+        grid-template-columns: minmax(0, 1fr) 88px;
         column-gap: 5px;
+        min-height: 195px;
     }
 
-
-    /* ---------- Information ---------- */
-
     .footer-info h2 {
-        font-size: .76rem;
-
         margin-bottom: 6px;
+        font-size: .76rem;
     }
 
     .footer-description p {
         font-size: .68rem;
-
         line-height: 1.40;
     }
 
-
-    /* ---------- Contact ---------- */
-
     .footer-contact {
-        margin-top: 8px;
-
         gap: 4px;
+        margin-top: 8px;
     }
 
     .footer-contact-item {
         gap: 4px;
-
         font-size: .60rem;
-
         line-height: 1.25;
     }
 
@@ -735,9 +398,6 @@
         height: 11px;
     }
 
-
-    /* ---------- Baker ---------- */
-
     .footer-baker {
         width: 88px;
     }
@@ -745,16 +405,12 @@
     .baker-photo-wrap {
         width: 84px;
         height: 122px;
-
         border-width: 3px;
-
-        box-shadow:
-            0 5px 13px rgba(0, 0, 0, .30);
+        box-shadow: 0 5px 13px rgba(0, 0, 0, .30);
     }
 
     .baker-name {
         margin-top: 4px;
-
         font-size: .58rem;
     }
 }
