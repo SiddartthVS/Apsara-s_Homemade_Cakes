@@ -20,8 +20,12 @@
     border-bottom: 2px solid rgba(62, 34, 21, .88);
 }
 
+
+/* Top fade */
+
 #recent-cakes::before {
     content: "";
+
     position: absolute;
 
     top: 0;
@@ -39,20 +43,28 @@
 }
 
 
+/* Heading */
+
 .recent-cakes-heading {
     position: relative;
+
     width: min(700px, 92%);
+
     margin: 0 auto 18px;
 
     padding-bottom: 12px;
 
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+
     font-weight: 700;
+
     text-align: center;
 
     color: rgba(62, 34, 21, .88);
 }
 
+
+/* Heading divider */
 
 .recent-cakes-heading::after {
     content: "";
@@ -61,6 +73,7 @@
 
     left: 10%;
     right: 10%;
+
     bottom: 0;
 
     height: 1px;
@@ -68,25 +81,51 @@
     background: rgba(62, 34, 21, .45);
 }
 
+
+/* =========================================================
+   RECENT CAKES MARQUEE
+   ========================================================= */
+
 .marquee-wrapper {
     width: 100%;
+
     overflow: hidden;
+
     padding: 6px 0 8px;
+
     margin: 0 auto;
 }
 
+
 .marquee-track {
     display: flex;
+
     gap: 16px;
+
     width: max-content;
-    animation: marquee-scroll linear infinite;
+
+    /*
+       Desktop animation.
+       The previous version had no duration, which defaults
+       effectively to 0s and makes the marquee appear static.
+    */
+    animation: marquee-scroll 40s linear infinite;
+
+    will-change: transform;
 }
+
+
+/* Pause while hovering */
 
 .marquee-wrapper:hover .marquee-track {
     animation-play-state: paused;
 }
 
+
+/* Marquee movement */
+
 @keyframes marquee-scroll {
+
     0% {
         transform: translateX(0);
     }
@@ -94,54 +133,49 @@
     100% {
         transform: translateX(-50%);
     }
+
 }
+
+
+/* =========================================================
+   CAKE THUMBNAILS
+   ========================================================= */
 
 .cake-thumb {
     width: 150px;
     height: 150px;
+
     object-fit: cover;
+
     border-radius: 12px;
+
     border: 3px solid #C41E3A;
+
     flex-shrink: 0;
+
     cursor: pointer;
+
     transform: rotate(var(--tilt, 0deg));
-    transition: transform .3s ease, box-shadow .3s ease;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
+
 
 .cake-thumb:hover {
     transform: rotate(0deg) scale(1.15);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, .25);
+
     z-index: 2;
 }
 
-@media (max-width: 768px) {
-    .recent-cakes-heading {
-        font-size: clamp(1.3rem, 4vw, 0.8rem) !important;
-    }
 
-    .cake-thumb {
-        width: 120px;
-        height: 120px;
-        border-width: 2px;
-        border-radius: 10px;
-    }
-
-    .marquee-track {
-        gap: 20px;
-        animation-duration: 40s;
-    }
-}
-
-@media (max-width: 480px) {
-    .cake-thumb {
-        width: 120px;
-        height: 120px;
-    }
-
-    .marquee-track {
-        gap: 20px;
-    }
-}
+/* =========================================================
+   RECENT CAKES CORNER DECORATIONS
+   ========================================================= */
 
 .recent-corner {
     position: absolute;
@@ -156,28 +190,40 @@
     pointer-events: none;
 }
 
+
 .recent-corner-left {
     left: 0;
 }
+
 
 .recent-corner-right {
     right: 0;
 }
 
+
+/* =========================================================
+   MORE PHOTOS BUTTON
+   ========================================================= */
+
 .recent-photos-btn {
     display: block;
 
     margin: 8px auto 0;
+
     padding: 7px 22px;
 
     background: rgba(62, 34, 21, .08);
+
     color: #5A3828;
 
     border: 1px solid rgba(62, 34, 21, .25);
+
     border-radius: 999px;
 
     font-family: inherit;
+
     font-size: .72rem;
+
     font-weight: 400;
 
     cursor: pointer;
@@ -188,37 +234,94 @@
         transform .2s ease;
 }
 
+
 .recent-photos-btn:hover {
     background: rgba(62, 34, 21, .14);
+
     border-color: rgba(62, 34, 21, .35);
+
     transform: translateY(-1px);
 }
 
 
+/* =========================================================
+   RECENT CAKES GALLERY IMAGES
+   ========================================================= */
+
 .recent-gallery-img {
     width: 100%;
+
     aspect-ratio: 1 / 1;
+
     object-fit: cover;
+
     border-radius: 14px;
+
     display: block;
 }
 
 
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
+
+    .recent-cakes-heading {
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
+    }
+
+
+    .cake-thumb {
+        width: 120px;
+        height: 120px;
+
+        border-width: 2px;
+
+        border-radius: 10px;
+    }
+
+
+    .marquee-track {
+        gap: 20px;
+
+        animation-duration: 40s;
+    }
+
 
     .recent-photos-btn {
         margin-top: 6px;
+
         padding: 6px 18px;
+
         font-size: .65rem;
     }
 
 }
 
 
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
 @media (max-width: 480px) {
+
+    .cake-thumb {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .marquee-track {
+        gap: 20px;
+
+        animation-duration: 40s;
+    }
+
 
     .recent-photos-btn {
         padding: 5px 15px;
+
         font-size: .58rem;
     }
 

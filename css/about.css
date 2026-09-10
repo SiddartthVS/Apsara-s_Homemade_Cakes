@@ -1,17 +1,15 @@
 /* =========================================================
-   HOME BAKER FOOTER
+   ABOUT / HOME BAKER FOOTER
    ========================================================= */
 
 #baker-footer {
     position: relative;
-    overflow: hidden;
-
     width: 100%;
-    min-height: 390px;
-
+    min-height: 420px;
+    overflow: hidden;
     box-sizing: border-box;
 
-    padding: 92px 110px 85px 60px;
+    padding: 82px 100px 72px 55px;
 
     border-radius: 30px 30px 0 0;
 
@@ -19,21 +17,21 @@
 
     background-image:
         linear-gradient(to bottom,
-            transparent 52%,
-            rgba(0, 0, 0, .04) 62%,
-            rgba(0, 0, 0, .30) 80%,
-            rgba(0, 0, 0, .92) 100%),
+            transparent 48%,
+            rgba(0, 0, 0, .05) 62%,
+            rgba(0, 0, 0, .30) 82%,
+            rgba(0, 0, 0, .94) 100%),
         radial-gradient(circle,
-            #E8192C 11%,
-            transparent 12%),
+            #E8192C 10%,
+            transparent 11%),
         radial-gradient(circle,
-            #C41E3A 11%,
-            transparent 12%);
+            #C41E3A 10%,
+            transparent 11%);
 
     background-size:
         100% 100%,
-        42px 42px,
-        42px 42px;
+        30px 30px,
+        30px 30px;
 
     background-position:
         0 0,
@@ -48,9 +46,9 @@
     border-top: 1px solid rgba(232, 200, 64, .45);
 
     box-shadow:
-        inset 0 18px 32px rgba(62, 34, 21, .22),
-        inset 0 -22px 45px rgba(0, 0, 0, .18),
-        0 -8px 25px rgba(62, 34, 21, .16);
+        inset 0 18px 32px rgba(62, 34, 21, .20),
+        inset 0 -24px 48px rgba(0, 0, 0, .20),
+        0 -8px 25px rgba(62, 34, 21, .14);
 }
 
 
@@ -60,33 +58,24 @@
 
 .footer-ribbon {
     position: absolute;
-
     z-index: 4;
 
     background: #E8C840;
 
     box-shadow:
-        0 2px 5px rgba(62, 34, 21, .30);
+        0 2px 5px rgba(62, 34, 21, .28);
 }
-
-
-/* Horizontal ribbon */
 
 .footer-ribbon-horizontal {
-    top: 42px;
+    top: 40px;
     left: 0;
     right: 0;
-
-    height: 22px;
+    height: 20px;
 }
-
-
-/* Vertical ribbon */
 
 .footer-ribbon-vertical {
     top: 0;
-    right: 68px;
-
+    right: 66px;
     width: 22px;
     height: 100%;
 
@@ -100,51 +89,204 @@
 
 .footer-bow {
     position: absolute;
+    z-index: 8;
 
-    top: 8px;
-    right: 40px;
+    /*
+       The bow is intentionally positioned around the
+       ribbon intersection rather than the section corner.
+    */
+    top: 3px;
+    right: 13px;
 
-    width: 94px;
+    width: 125px;
     height: auto;
 
-    z-index: 7;
+    display: block;
 
-    transform: rotate(10deg);
+    transform: rotate(9deg);
+
+    transform-origin: center center;
 
     filter:
-        drop-shadow(0 3px 4px rgba(62, 34, 21, .35));
+        drop-shadow(0 3px 5px rgba(62, 34, 21, .35));
 }
 
 
 /* =========================================================
-   MAIN FOOTER CONTENT
+   MAIN HORIZONTAL LAYOUT
    ========================================================= */
 
 .footer-main {
     position: relative;
-
     z-index: 5;
 
-    width: min(1080px, 100%);
-
+    width: 100%;
     min-height: 270px;
 
     margin: 0 auto;
 
-    display: flex;
+    display: grid;
 
-    flex-direction: row-reverse;
+    grid-template-columns:
+        minmax(0, 1fr) 235px;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    gap: 65px;
+    column-gap: 34px;
 }
 
 
 /* =========================================================
-   BAKER SIDE
+   LEFT INFORMATION
+   ========================================================= */
+
+.footer-info {
+    min-width: 0;
+    max-width: 720px;
+
+    color: #FFF4E5;
+
+    text-align: left;
+
+    font-family:
+        "Segoe UI",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+}
+
+.footer-info h2 {
+    margin: 0 0 11px;
+
+    color: #E8C840;
+
+    /*
+       Keep the decorative script only for the greeting.
+    */
+    font-family:
+        "Playwrite AU SA",
+        cursive;
+
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, .28);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.footer-description {
+    max-width: 680px;
+    margin: 0;
+}
+
+.footer-description p {
+    margin: 0;
+
+    color: #FFF4E5;
+
+    font-family:
+        "Segoe UI",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: .98rem;
+
+    line-height: 1.52;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    letter-spacing: .005em;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================================================
+   PHONE + ADDRESS
+   ========================================================= */
+
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.footer-contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding: 0;
+
+    color: #FFF4E5;
+
+    background: transparent;
+
+    border: none;
+
+    text-decoration: none;
+
+    font-family:
+        "Segoe UI",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: .86rem;
+
+    font-weight: 500;
+
+    line-height: 1.38;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, .35);
+
+    transition:
+        color .2s ease;
+}
+
+.footer-contact-item:hover {
+    color: #E8C840;
+}
+
+.footer-contact-icon {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    fill: #E8C840;
+}
+
+
+/* =========================================================
+   RIGHT BAKER AREA
    ========================================================= */
 
 .footer-baker {
@@ -152,7 +294,7 @@
 
     width: 235px;
 
-    flex-shrink: 0;
+    justify-self: center;
 
     display: flex;
 
@@ -165,25 +307,29 @@
 
 
 /* =========================================================
-   BAKER OVAL IMAGE
+   OVAL PORTRAIT
    ========================================================= */
 
 .baker-photo-wrap {
-    width: 215px;
-    height: 285px;
+    width: 200px;
+    height: 275px;
 
     overflow: hidden;
 
     border-radius: 50%;
 
-    border: 6px solid #E8C840;
+    border: 5px solid #E8C840;
 
     background: #F5E6D3;
 
+    /*
+       Subtle shadow specifically to separate the
+       oval portrait from the red patterned background.
+    */
     box-shadow:
-        0 8px 25px rgba(62, 34, 21, .34);
+        0 7px 18px rgba(0, 0, 0, .30),
+        0 2px 7px rgba(62, 34, 21, .24);
 }
-
 
 .baker-photo {
     width: 100%;
@@ -202,11 +348,19 @@
 .baker-name {
     width: 100%;
 
-    margin: 9px 0 0;
+    margin: 8px 0 0;
 
     color: #E8C840;
 
-    font-size: 1.25rem;
+    /*
+       Decorative script retained here because this
+       is branding rather than body text.
+    */
+    font-family:
+        "Playwrite AU SA",
+        cursive;
+
+    font-size: 1.05rem;
 
     font-weight: 400;
 
@@ -220,153 +374,23 @@
 
 
 /* =========================================================
-   INFORMATION SIDE
-   ========================================================= */
-
-.footer-info {
-    flex: 1;
-
-    min-width: 0;
-
-    max-width: 650px;
-
-    color: #F8EAD5;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   INTRO HEADING
-   ========================================================= */
-
-.footer-info h2 {
-    margin: 0 0 15px;
-
-    color: #E8C840;
-
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-
-    font-weight: 400;
-    text-align: left;
-    line-height: 1.15;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
-.footer-description {
-    max-width: 620px;
-
-    margin-left: 0;
-}
-
-
-.footer-description p {
-    margin: 0 0 11px;
-
-    color: #FFF4E5;
-
-    font-size: 1rem;
-
-    line-height: 1.6;
-
-    font-weight: 350;
-
-    text-shadow:
-        0 2px 6px rgba(0, 0, 0, .35);
-}
-
-
-/* =========================================================
-   CONTACT AREA
-   ========================================================= */
-
-.footer-contact {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 8px;
-
-    margin-top: 20px;
-}
-
-
-.footer-contact-item {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    padding: 0;
-
-    color: #FFF4E5;
-
-    background: transparent;
-
-    border: none;
-
-    text-decoration: none;
-
-    font-size: .92rem;
-
-    line-height: 1.5;
-
-    text-align: left;
-
-    text-shadow:
-        0 2px 6px rgba(0, 0, 0, .35);
-
-    transition:
-        color .2s ease;
-}
-
-
-.footer-contact-item:hover {
-    color: #E8C840;
-}
-
-
-/* =========================================================
-   CONTACT ICONS
-   ========================================================= */
-
-.footer-contact-icon {
-    width: 18px;
-    height: 18px;
-
-    flex-shrink: 0;
-
-    margin-top: 2px;
-
-    fill: #E8C840;
-}
-
-
-/* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 768px) {
 
     #baker-footer {
-        min-height: 320px;
+        min-height: 335px;
 
         padding:
-            76px 62px 68px 24px;
+            63px 44px 80px 20px;
 
         border-radius: 24px 24px 0 0;
 
         background-size:
             100% 100%,
-            34px 34px,
-            34px 34px;
+            24px 24px,
+            24px 28px;
 
         background-position:
             0 0,
@@ -375,131 +399,110 @@
     }
 
 
-    /* Ribbon */
+    /* ---------- Ribbon ---------- */
 
     .footer-ribbon-horizontal {
-        top: 31px;
-        height: 16px;
+        top: 28px;
+        height: 15px;
     }
-
 
     .footer-ribbon-vertical {
-        top: 0;
-        right: 31px;
-
-        width: 16px;
-        height: 100%;
-
-        background: #E8C840;
+        right: 27px;
+        width: 15px;
     }
 
 
-    /* Bow */
+    /* ---------- Bow ---------- */
 
     .footer-bow {
-        top: 7px;
-        right: 12px;
+        top: 1px;
+        right: 1px;
 
-        width: 62px;
+        width: 82px;
+
+        transform: rotate(9deg);
     }
 
 
-    /* Layout */
+    /* ---------- Main Layout ---------- */
 
     .footer-main {
-        width: 100%;
-
         min-height: 225px;
 
-        flex-direction: row-reverse;
+        grid-template-columns:
+            minmax(0, 1fr) 138px;
 
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 28px;
+        column-gap: 14px;
     }
 
 
-    /* Baker */
-
-    .footer-baker {
-        width: 145px;
-    }
-
-
-    .baker-photo-wrap {
-        width: 140px;
-        height: 190px;
-
-        border-width: 5px;
-    }
-
-
-    .baker-name {
-        margin-top: 7px;
-
-        font-size: .9rem;
-
-        line-height: 1.2;
-    }
-
-
-    /* Information */
+    /* ---------- Information ---------- */
 
     .footer-info {
-        max-width: calc(100% - 170px);
-
-        text-align: left;
+        max-width: none;
     }
-
 
     .footer-info h2 {
-        font-size: 1.45rem;
+        margin-bottom: 8px;
 
-        margin-bottom: 9px;
+        font-size: 1.30rem;
     }
-
 
     .footer-description {
-        max-width: 100%;
+        max-width: none;
     }
-
 
     .footer-description p {
-        font-size: .8rem;
+        font-size: .86rem;
 
-        line-height: 1.5;
-
-        margin-bottom: 7px;
+        line-height: 1.48;
     }
 
 
-    /* Contact */
+    /* ---------- Contact ---------- */
 
     .footer-contact {
-        margin-top: 13px;
+        margin-top: 12px;
 
-        gap: 5px;
+        gap: 6px;
     }
-
 
     .footer-contact-item {
-        gap: 7px;
+        gap: 6px;
 
-        font-size: .70rem;
+        font-size: .75rem;
 
-        line-height: 1.4;
+        line-height: 1.35;
     }
-
 
     .footer-contact-icon {
         width: 15px;
         height: 15px;
-
-        margin-top: 1px;
     }
 
+
+    /* ---------- Baker ---------- */
+
+    .footer-baker {
+        width: 138px;
+    }
+
+    .baker-photo-wrap {
+        width: 128px;
+        height: 181px;
+
+        border-width: 4px;
+
+        box-shadow:
+            0 6px 16px rgba(0, 0, 0, .30),
+            0 2px 7px rgba(62, 34, 21, .24);
+    }
+
+    .baker-name {
+        margin-top: 6px;
+
+        font-size: .78rem;
+    }
 }
 
 
@@ -510,145 +513,140 @@
 @media (max-width: 480px) {
 
     #baker-footer {
-        min-height: 275px;
+        min-height: 315px;
 
         padding:
-            60px 42px 58px 12px;
+            53px 29px 80px 12px;
 
         border-radius: 20px 20px 0 0;
 
         background-size:
             100% 100%,
-            29px 29px,
-            29px 29px;
+            21px 21px,
+            21px 21px;
 
         background-position:
             0 0,
             0 0,
-            14.5px 14.5px;
+            14px 14px;
     }
 
 
-    /* Ribbon */
+    /* ---------- Ribbon ---------- */
 
     .footer-ribbon-horizontal {
-        top: 25px;
-        height: 12px;
+        top: 23px;
+        height: 11px;
     }
-
 
     .footer-ribbon-vertical {
-        top: 0;
-        right: 20px;
-
-        width: 12px;
-        height: 100%;
-
-        background: #E8C840;
+        right: 14px;
+        width: 11px;
     }
 
 
-    /* Bow */
+    /* ---------- Bow ---------- */
 
     .footer-bow {
-        top: 6px;
-        right: 7px;
+        top: 0;
+        right: -1px;
 
-        width: 48px;
+        width: 62px;
+
+        transform: rotate(9deg);
     }
 
 
-    /* Layout */
+    /* ---------- Main Layout ---------- */
 
     .footer-main {
         min-height: 205px;
 
-        flex-direction: row-reverse;
+        grid-template-columns:
+            minmax(0, 1fr) 102px;
+
+        column-gap: 7px;
 
         align-items: center;
-
-        justify-content: space-between;
-
-        gap: 10px;
     }
 
 
-    /* Baker */
+    /* ---------- Information ---------- */
+
+    .footer-info {
+        max-width: none;
+
+        width: 100%;
+    }
+
+    .footer-info h2 {
+        margin:
+            0 0 7px;
+
+        font-size: .84rem;
+
+        line-height: 1.18;
+
+        white-space: nowrap;
+    }
+
+    .footer-description p {
+        font-size: .76rem;
+
+        line-height: 1.45;
+
+        letter-spacing: 0;
+    }
+
+
+    /* ---------- Contact ---------- */
+
+    .footer-contact {
+        margin-top: 9px;
+
+        gap: 5px;
+    }
+
+    .footer-contact-item {
+        gap: 5px;
+
+        font-size: .68rem;
+
+        line-height: 1.30;
+    }
+
+    .footer-contact-icon {
+        width: 13px;
+        height: 13px;
+
+        margin-top: 0;
+    }
+
+
+    /* ---------- Baker ---------- */
 
     .footer-baker {
-        width: 100px;
+        width: 102px;
     }
-
 
     .baker-photo-wrap {
-        width: 96px;
-        height: 132px;
+        width: 98px;
+        height: 143px;
 
         border-width: 4px;
-    }
 
+        box-shadow:
+            0 6px 17px rgba(0, 0, 0, .30),
+            0 2px 7px rgba(62, 34, 21, .25);
+    }
 
     .baker-name {
         margin-top: 5px;
 
         font-size: .65rem;
 
-        line-height: 1.15;
+        line-height: 1.12;
     }
-
-
-    /* Information */
-
-    .footer-info {
-        max-width: calc(100% - 110px);
-
-        text-align: left;
-    }
-
-
-    .footer-info h2 {
-        font-size: 1rem;
-
-        line-height: 1.15;
-
-        margin-bottom: 6px;
-    }
-
-
-    .footer-description p {
-        font-size: .62rem;
-
-        line-height: 1.4;
-
-        margin-bottom: 5px;
-    }
-
-
-    /* Contact */
-
-    .footer-contact {
-        margin-top: 9px;
-
-        gap: 4px;
-    }
-
-
-    .footer-contact-item {
-        gap: 5px;
-
-        font-size: .55rem;
-
-        line-height: 1.3;
-    }
-
-
-    .footer-contact-icon {
-        width: 13px;
-        height: 13px;
-
-        margin-top: 1px;
-    }
-
 }
 
 
@@ -659,63 +657,104 @@
 @media (max-width: 350px) {
 
     #baker-footer {
-        padding-left: 8px;
-        padding-right: 34px;
+        min-height: 300px;
 
-        min-height: 265px;
+        padding:
+            50px 25px 80px 9px;
     }
 
+
+    /* ---------- Ribbon ---------- */
+
+    .footer-ribbon-horizontal {
+        top: 22px;
+        height: 10px;
+    }
+
+    .footer-ribbon-vertical {
+        right: 11px;
+        width: 10px;
+    }
+
+
+    /* ---------- Bow ---------- */
+
+    .footer-bow {
+        top: 0;
+        right: -1px;
+
+        width: 54px;
+    }
+
+
+    /* ---------- Main Layout ---------- */
 
     .footer-main {
-        gap: 6px;
+        min-height: 195px;
+
+        grid-template-columns:
+            minmax(0, 1fr) 88px;
+
+        column-gap: 5px;
     }
 
 
-    .footer-info {
-        max-width: calc(100% - 88px);
-    }
-
-
-    .footer-baker {
-        width: 82px;
-    }
-
-
-    .baker-photo-wrap {
-        width: 78px;
-        height: 108px;
-
-        border-width: 3px;
-    }
-
-
-    .baker-name {
-        font-size: .55rem;
-    }
-
+    /* ---------- Information ---------- */
 
     .footer-info h2 {
-        font-size: .84rem;
-    }
+        font-size: .76rem;
 
+        margin-bottom: 6px;
+    }
 
     .footer-description p {
-        font-size: .51rem;
+        font-size: .68rem;
 
-        line-height: 1.35;
+        line-height: 1.40;
     }
 
+
+    /* ---------- Contact ---------- */
+
+    .footer-contact {
+        margin-top: 8px;
+
+        gap: 4px;
+    }
 
     .footer-contact-item {
-        font-size: .48rem;
+        gap: 4px;
 
-        line-height: 1.3;
+        font-size: .60rem;
+
+        line-height: 1.25;
     }
-
 
     .footer-contact-icon {
         width: 11px;
         height: 11px;
     }
 
+
+    /* ---------- Baker ---------- */
+
+    .footer-baker {
+        width: 88px;
+    }
+
+    .baker-photo-wrap {
+        width: 84px;
+        height: 122px;
+
+        border-width: 3px;
+
+        box-shadow:
+            0 5px 13px rgba(0, 0, 0, .30);
+    }
+
+    .baker-name {
+        margin-top: 4px;
+
+        font-size: .58rem;
+    }
 }
