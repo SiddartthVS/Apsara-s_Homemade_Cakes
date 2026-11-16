@@ -61,7 +61,7 @@ function openRecentCakesGallery() {
     const closeBtn = content.querySelector(".close-btn");
     if (!closeBtn) return;
 
-    content.querySelectorAll(".recent-gallery-img").forEach(img => img.remove());
+    content.querySelectorAll(".cake-card-img, .recent-gallery-img").forEach(img => img.remove());
 
     images.forEach(filename => {
         const img = document.createElement("img");
@@ -72,6 +72,5 @@ function openRecentCakesGallery() {
         content.insertBefore(img, closeBtn);
     });
 
-    modal.classList.add("show");
-    document.body.style.overflow = "hidden";
+    openGallery();
 }

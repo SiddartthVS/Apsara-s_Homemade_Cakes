@@ -249,16 +249,16 @@
 
 .gallery-modal {
     position: fixed;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 998;
+    inset: 0;
+    /* above the top nav (9999) and the social bar (999) so nothing can cover the gallery */
+    z-index: 10000;
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    /* top padding leaves a dark strip for the close button so it never overlaps the photos */
+    padding: calc(env(safe-area-inset-top, 0px) + 68px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px);
     background: rgba(0, 0, 0, .8);
+    overscroll-behavior: contain;
 }
 
 .gallery-modal.show {
@@ -271,9 +271,11 @@
     grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 16px;
     width: min(1000px, 100%);
-    max-height: 90vh;
+    max-height: 100%;
     padding: 20px;
     overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     background: var(--color-cream-card);
     border-radius: 20px;
 }
@@ -286,16 +288,25 @@
     border-radius: 14px;
 }
 
+/* Fixed to the screen (not the scrolling panel) so it is always visible and always on top */
 .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    width: 45px;
-    height: 45px;
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    right: 14px;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    color: var(--color-cream);
     font-size: 1.2rem;
-    border: none;
+    line-height: 1;
+    background: rgba(62, 34, 21, .95);
+    border: 2px solid var(--color-gold);
     border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
     cursor: pointer;
 }
 

@@ -163,7 +163,7 @@ function openCardGallery(btn) {
     if (!content) return;
 
     const closeBtn = content.querySelector(".close-btn");
-    content.querySelectorAll(".cake-card-img").forEach(img => img.remove());
+    content.querySelectorAll(".cake-card-img, .recent-gallery-img").forEach(img => img.remove());
 
     imgs.forEach(src => {
         const img = document.createElement("img");
@@ -174,8 +174,7 @@ function openCardGallery(btn) {
         content.insertBefore(img, closeBtn);
     });
 
-    modal.classList.add("show");
-    document.body.style.overflow = "hidden";
+    openGallery();
 }
 
 async function loadSection(section) {
