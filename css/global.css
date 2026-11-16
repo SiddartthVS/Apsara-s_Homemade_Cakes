@@ -20,12 +20,15 @@
     --motion-standard: cubic-bezier(.4, 0, .2, 1);
 }
 
+html {
+    background-color: var(--color-cream);
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     color: var(--color-brown);
-    background-color: var(--color-cream);
     color-scheme: light only;
     font-weight: 300;
     font-family: var(--font-brand);
