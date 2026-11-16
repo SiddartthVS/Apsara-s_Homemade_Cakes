@@ -21,6 +21,11 @@ IMAGES: barbie1.png, barbie2.png ,barbie3.png, barbie4.png
 A gorgeous cake shaped like a beautiful doll with a tasty, creamy dress.
 Any flavour (1 kg) - ₹ 999
 
+Function Theme Cake
+A two-tier Half-Saree celebration cake with rich chocolate curls and traditional topper.
+IMAGES: function.png
+Any flavour (1 kg | 2 tier) - ₹ 1199
+
 Santa Theme Cake
 A happy and festive red and white cute cake to celebrate the Christmas season.
 IMAGES: santa.png
@@ -40,6 +45,11 @@ Biriyani Theme Cake
 A unique and creative fusion cake styled to look like a pot of delicious biriyani with side dishes.
 IMAGES: briyani.png
 (1/2 kg) - ₹ 600
+
+Frozen Theme Cake
+A magical two-tier Frozen cake with blye frosting, ice castke and Elsa toppers.
+IMAGES: frozen.png
+(1 kg | 2 tier) - ₹ 699
 
 Tom and Jerry Theme Cake
 A fun and playful cake bringing the classic Tom and Jerry cartoon to life.
